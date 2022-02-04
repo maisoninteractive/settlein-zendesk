@@ -804,8 +804,12 @@ input[type="submit"][disabled] {
 
 @media (min-width: 1160px) {}
 
+.logo {
+    padding: 20px;
+}
+
 .logo img {
-    max-height: 37px;
+    max-height: 8px;
     vertical-align: middle;
 }
 
@@ -1288,7 +1292,6 @@ input[type="submit"][disabled] {
     background-image: url($homepage_background_image);
     background-position: center;
     background-size: cover;
-    height: 300px;
     padding: 0 20px;
     text-align: center;
     width: 100%;
@@ -1297,6 +1300,12 @@ input[type="submit"][disabled] {
 .hero-inner {
     position: relative;
     margin: 50px auto;
+}
+
+.hero-image {
+    border-radius: 11px 11px 11px 11px;
+    box-shadow: 38px -26px 0px 0px #ffa078;
+    max-width: 400px;
 }
 
 .page-header {
@@ -1386,9 +1395,10 @@ input[type="submit"][disabled] {
 .blocks-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     list-style: none;
     padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -1413,6 +1423,8 @@ input[type="submit"][disabled] {
     border: none;
     flex-direction: column;
     position: relative;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 @media (min-width: 768px) {
@@ -1437,7 +1449,7 @@ input[type="submit"][disabled] {
 .hero-inner .blocks-item:hover,
 .hero-inner .blocks-item:focus,
 .hero-inner .blocks-item:active {
-    background-color: none;
+    background-color: transparent;
 }
 
 .blocks-item-internal {
@@ -5210,4 +5222,6 @@ html[dir="rtl"] .notification-left-aligned {
 
 /**** Cusrtomization ****/
 
-.top-header {}
+.top-header {
+    text-align: left;
+}

@@ -271,6 +271,13 @@
                     "description": "scoped_community_search_description",
                     "label": "scoped_community_search_label",
                     "value": true
+                },
+                {
+                    "identifier": "hero_section_heading",
+                    "type": "text",
+                    "description": "Heading",
+                    "label": "Hero Section Title",
+                    "value": "How can we help?"
                 }
             ]
         },
