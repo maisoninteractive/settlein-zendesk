@@ -11,7 +11,7 @@
                     "type": "color",
                     "description": "brand_color_description",
                     "label": "brand_color_label",
-                    "value": "rgba(239, 239, 239, 1)"
+                    "value": "rgba(0, 0, 0, 1)"
                 },
                 {
                     "identifier": "brand_text_color",
