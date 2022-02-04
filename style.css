@@ -1426,6 +1426,7 @@ input[type="submit"][disabled] {
     position: relative;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 80px;
 }
 
 .hero-inner .blocks-item.hero-left {
@@ -1445,6 +1446,14 @@ input[type="submit"][disabled] {
 @media (max-width: 768px) {
     .hero-inner .blocks-item.hero-left {
         padding-left: 0;
+    }
+    h2.top-header {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .hero-inner .blocks-item {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
