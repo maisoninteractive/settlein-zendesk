@@ -1262,14 +1262,14 @@ input[type="submit"][disabled] {
 
 .search-icon {
     position: relative;
-    top: 50%;
+    bottom: 0;
     transform: translateY(-50%);
     position: absolute;
-    left: 15px;
+    right: 15px;
     z-index: 1;
     width: 18px;
     height: 18px;
-    color: #777;
+    color: #000000;
 }
 
 [dir="rtl"] .search-icon {
@@ -1296,7 +1296,7 @@ input[type="submit"][disabled] {
 
 .hero-inner {
     position: relative;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .page-header {
@@ -1409,6 +1409,12 @@ input[type="submit"][disabled] {
     text-align: center;
 }
 
+.hero-inner .blocks-item {
+    border: none;
+    flex-direction: column;
+    position: relative;
+}
+
 @media (min-width: 768px) {
     .blocks-item {
         margin: 0 15px 30px;
@@ -1426,6 +1432,12 @@ input[type="submit"][disabled] {
 .blocks-item:active * {
     color: $brand_text_color;
     text-decoration: none;
+}
+
+.hero-inner .blocks-item:hover,
+.hero-inner .blocks-item:focus,
+.hero-inner .blocks-item:active {
+    background-color: none;
 }
 
 .blocks-item-internal {
@@ -5194,3 +5206,8 @@ html[dir="rtl"] .notification-left-aligned {
 .dropdown-chevron-icon {
     vertical-align: middle;
 }
+
+
+/**** Cusrtomization ****/
+
+.top-header {}

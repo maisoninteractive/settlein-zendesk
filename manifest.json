@@ -230,6 +230,12 @@
                     "label": "homepage_background_image_label"
                 },
                 {
+                    "identifier": "hero_image",
+                    "type": "file",
+                    "description": "hero_image_description",
+                    "label": "hero_image_label"
+                },
+                {
                     "identifier": "community_background_image",
                     "type": "file",
                     "description": "community_background_image_description",
