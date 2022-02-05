@@ -5489,6 +5489,36 @@ ul.tabs li.active {
 }
 
 
+/**** Filter Selectors ****/
+
+.topics-container,
+.language-container {
+    background-color: #f0f0f7;
+    border-radius: 5px 5px 5px 5px;
+    padding: 4px 8px 4px 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.topics-container .topics-icon-col,
+.language-container .language-icon-col {
+    flex: 1 1 auto;
+}
+
+.topics-container .topics-icon-col svg,
+.language-container .language-icon-col svg {
+    fill: #000000;
+    width: 50px;
+}
+
+.language-dropdown,
+.topics-dropdown {
+    flex: 20 1 auto;
+}
+
+
 /**** Cusrtomization ****/
 
 .top-header {
