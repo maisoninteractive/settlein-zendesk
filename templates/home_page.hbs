@@ -21,13 +21,13 @@
 </section>
 </section>
 <div class="container">
-
+  {{#if section.sections}}
   <h3 class="section-title">Support Topics</h3>
   <div class="flex-grid-section">
 
     <div class="flex-row">
 
-      {{#each sections}}
+      {{#each section.sections}}
 
       <div class="flex-col-lg-6">
         <div class="item-img-left">
@@ -53,7 +53,7 @@
 
     </div>
   </div>
-
+  {{/if}}
 
   <section class="section knowledge-base">
     <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
