@@ -5264,6 +5264,10 @@ html[dir="rtl"] .notification-left-aligned {
     flex-wrap: wrap;
 }
 
+.flex-col-lg-6 {
+    margin-bottom: 15px;
+}
+
 @media (min-width: 992px) {
     .flex-col-lg-6 {
         -ms-flex: 0 0 50%;
@@ -5296,6 +5300,8 @@ h3.section-title {
     padding-top: 35px;
     margin: 10px;
     background-color: #f8f9fc;
+    overflow: hidden;
+    height: 100%;
 }
 
 .item-img-left .item_img {
