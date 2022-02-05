@@ -314,29 +314,9 @@
                   </path>
                 </svg>
               </div>
-
               <div class="language-dropdown">
-                <div class="header-language-selector">
-                  {{#if locale}}
-                  <div class="dropdown language-selector">
-                    <button class="dropdown-toggle" aria-haspopup="true">
-                      Select Language
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false"
-                        viewBox="0 0 12 12" class="dropdown-chevron-icon">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                          d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
-                      </svg>
-                    </button>
-                    <span class="dropdown-menu dropdown-menu-end" role="menu">
-                      <a href="#" dir="ltr" rel="nofollow" role="menuitem"></a>
-                      {{#each locale}}
-                      <a href="{{locale.url}}" dir="{{locale.direction}}" rel="nofollow" role="menuitem">
-                        {{locale.name}}
-                      </a>
-                      {{/each}}
-                    </span>
-                  </div>
-                  {{/if}}
+                <div id="filter-language-selector">
+
                 </div>
               </div>
             </div>
@@ -444,6 +424,16 @@
     // Drawer Tabs
     var drawer = document.querySelectorAll(".tab_drawer_heading");
     tabMagic(drawer);
+
+
+    // Get the element
+    var elem = document.querySelector('#language-selector-wrapper > .language-selector');
+    var elem2 = document.querySelector('#filter-language-selector');
+    // Create a copy of it
+    var clone = elem.cloneNode(true);
+    // Inject it into the DOM
+    elem2.appendChild(clone);
+
 
   });
 </script>
