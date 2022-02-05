@@ -5269,8 +5269,9 @@ html[dir="rtl"] .notification-left-aligned {
 
 h3.section-title {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 38px;
     padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -5286,20 +5287,21 @@ h3.section-title {
     z-index: 2;
     transition: all 0.3s;
     padding-right: 15px;
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding-bottom: 35px;
+    padding-top: 35px;
     margin: 10px;
-    background-color: #efefef;
+    background-color: #f8f9fc;
 }
 
 .item-img-left .item_img {
     position: absolute;
     left: 0;
     top: 0;
-    height: 77px;
+    height: 80px;
     width: 100px;
     z-index: 2;
-    padding-left: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 
 .item-img-left .item-text {
