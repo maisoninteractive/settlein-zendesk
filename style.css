@@ -795,22 +795,13 @@ input[type="submit"][disabled] {
 .header {
     margin: 0 auto;
     position: relative;
-    padding: 0 0 5px 0;
+    padding: 15px 0 5px 0;
     align-items: center;
     display: flex;
     justify-content: space-between;
 }
 
 @media (min-width: 1160px) {}
-
-.logo {
-    padding-top: 40px;
-}
-
-.logo img {
-    max-height: 80px;
-    vertical-align: middle;
-}
 
 .logo span {
     margin: 0 10px;
@@ -825,6 +816,19 @@ input[type="submit"][disabled] {
 .logo a:focus,
 .logo a:active {
     text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+    .logo img {
+        max-height: 80px;
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: 1024px) {
+    .logo img {
+        max-height: 50px;
+    }
 }
 
 .user-nav {
