@@ -412,28 +412,32 @@
       })
     }
 
-    // Hide the content and show the first tab
-    hide(".tab_content");
-    //var parentElement = document.getElementsById("common_questions");
-    fadeIn(document.querySelector("#tab1"));
+    var tabContent = document.getElementById("#tab1");
+    if (tabContent) {
+      // Hide the content and show the first tab
+      hide(".tab_content");
+      //var parentElement = document.getElementsById("common_questions");
+      fadeIn(document.querySelector("#tab1"));
 
-    //Desktop Tabs
-    var tabLi = document.querySelectorAll("ul.tabs li");
-    tabMagic(tabLi);
+      //Desktop Tabs
+      var tabLi = document.querySelectorAll("ul.tabs li");
+      tabMagic(tabLi);
 
-    // Drawer Tabs
-    var drawer = document.querySelectorAll(".tab_drawer_heading");
-    tabMagic(drawer);
+      // Drawer Tabs
+      var drawer = document.querySelectorAll(".tab_drawer_heading");
+      tabMagic(drawer);
+    }
 
-
-    // Get the element
-    var elem = document.querySelector('#language-selector-wrapper > .language-selector');
-    var elem2 = document.querySelector('#filter-language-selector');
-    // Create a copy of it
-    var clone = elem.cloneNode(true);
-    // Inject it into the DOM
-    elem2.appendChild(clone);
-
+    var languageSelector = document.getElementById("#language-selector-wrapper");
+    if (languageSelector) {
+      // Get the element
+      var elem = document.querySelector('#language-selector-wrapper > .language-selector');
+      var elem2 = document.querySelector('#filter-language-selector');
+      // Create a copy of it
+      var clone = elem.cloneNode(true);
+      // Inject it into the DOM
+      elem2.appendChild(clone);
+    }
 
   });
 </script>
