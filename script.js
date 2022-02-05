@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-jQuery(function($) {
+(function($) {
 
     // tabbed content
     $(".tab_content").hide();
