@@ -65,7 +65,7 @@
   <div id="common_questions" class="tab_container">
     {{#each (slice categories 0 5) }}
     <h3 class="d_active tab_drawer_heading" rel="{{id}}">{{name}}</h3>
-    <div id="tab{{index}}" class="tab_content">
+    <div id="tab{{@index}}" class="tab_content">
 
       {{#each sections}}
       <div class="blocks-item-text-container">
