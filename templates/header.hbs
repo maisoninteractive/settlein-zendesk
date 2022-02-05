@@ -9,14 +9,14 @@
       {{/if}}
       {{/link}}
     </div>
-
     <div class="nav-wrapper-desktop">
       <nav class="user-nav" id="user-nav">
         <ul class="user-nav-list">
-          <a href="https://corenav-linux-staging.azurewebsites.net/about-core/">About CORE<i
-              class="icon icon-down-arrow1 "></i></a>
+          <li><a href="https://corenav-linux-staging.azurewebsites.net/about-core/">About CORE</i></a></li>
         </ul>
       </nav>
+    </div>
+    <div class="nav-wrapper-desktop">
       <div class="header-language-selector">
         {{#if alternative_locales}}
         <div class="dropdown language-selector">
@@ -42,50 +42,39 @@
     <div class="nav-wrapper-mobile">
       <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false"
         aria-label="{{t 'toggle_navigation'}}">
-        {{#if signed_in}}
-        {{user_avatar class="user-avatar"}}
-        {{/if}}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
           class="icon-menu">
           <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
         </svg>
       </button>
+
+
       <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
         <ul class="menu-list-mobile-items">
-          {{#if signed_in}}
-          <li class="user-avatar-item item">
-            {{#my_profile role="menuitem" class="my-profile"}}
-            {{user_avatar class="menu-profile-avatar"}}
-            <div class="menu-profile-name">
-              <div>{{user_name}}</div>
-              <div class="my-profile-tooltip">{{t 'profile'}}</div>
-            </div>
-            {{/my_profile}}
-          </li>
-          <li class="item">{{link "requests" role="menuitem"}}</li>
-          <li class="item">{{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}</li>
-          <li class="item">{{contact_details role="menuitem"}}</li>
-          <li class="item">{{change_password role="menuitem" class='change-password'}}</li>
-          <li class="nav-divider"></li>
-          {{else}}
-          <li class="item">
-            {{#link "sign_in" role="menuitem"}}
-            {{t 'sign_in'}}
-            {{/link}}
-          </li>
-          <li class="nav-divider"></li>
-          {{/if}}
-          <li class="item">{{link 'community' role="menuitem"}}</li>
-          <li class="item">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
-          <li class="nav-divider"></li>
-          {{#if signed_in}}
-          <li class="item">
-            {{link "sign_out" role="menuitem"}}
-          </li>
-          {{/if}}
-          </li>
+          <li><a href="https://corenav-linux-staging.azurewebsites.net/about-core/">About CORE</i></a></li>
         </ul>
       </nav>
+      <div class="header-language-selector">
+        {{#if alternative_locales}}
+        <div class="dropdown language-selector">
+          <button class="dropdown-toggle" aria-haspopup="true">
+            {{current_locale.name}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+              class="dropdown-chevron-icon">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
+            </svg>
+          </button>
+          <span class="dropdown-menu dropdown-menu-end" role="menu">
+            {{#each alternative_locales}}
+            <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+              {{name}}
+            </a>
+            {{/each}}
+          </span>
+        </div>
+        {{/if}}
+      </div>
+
     </div>
 
   </header>
