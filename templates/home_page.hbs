@@ -26,17 +26,17 @@
   <div class="flex-grid-section">
 
     <div class="flex-row">
-      {{#each categories}}
-      {{#each sections}}
+      {{#each categories 0 1}}
+      {{#each sections 0 6}}
 
       <div class="flex-col-lg-6">
         <div class="item-img-left">
           <div class="item_img">
             <div class="img_wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
-                <rect x="2" y="2" width="146" height="146" style="fill:#DEDEDE;stroke:#555555;stroke-width:2" /><text
-                  x="50%" y="50%" font-size="18" text-anchor="middle" alignment-baseline="middle"
-                  font-family="monospace, sans-serif" fill="#555555">150×150</text>
+                <rect x="2" y="2" width="146" height="146" style="fill:#DEDEDE;" /><text x="50%" y="50%" font-size="18"
+                  text-anchor="middle" alignment-baseline="middle" font-family="monospace, sans-serif"
+                  fill="#555555">150×150</text>
               </svg>
             </div>
             <div class="item-img-caption">{{name}}</div>
