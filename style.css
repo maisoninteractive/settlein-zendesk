@@ -5540,6 +5540,13 @@ ul.tabs li.active {
     text-align: left;
 }
 
+.topics-selector button svg,
+.topics-selector button i,
+.language-selector button svg,
+.language-selector button i {
+    margin-left: 30px;
+}
+
 
 /**** Helpers ****/
 
