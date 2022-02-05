@@ -1544,6 +1544,12 @@ input[type="submit"][disabled] {
     text-align: center;
 }
 
+.section.articles {
+    background-color: #f8f9fc;
+    padding: 50px 0;
+    margin-top: 40px;
+}
+
 
 /***** Promoted articles *****/
 
@@ -5279,14 +5285,6 @@ html[dir="rtl"] .notification-left-aligned {
 h3.section-title {
     font-weight: 700;
     font-size: 38px;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    h3.section-title {
-        padding-left: 0;
-    }
 }
 
 .item-img-left {
@@ -5298,7 +5296,6 @@ h3.section-title {
     padding-right: 15px;
     padding-bottom: 35px;
     padding-top: 35px;
-    margin: 10px;
     background-color: #f8f9fc;
     overflow: hidden;
     height: 100%;
@@ -5404,6 +5401,8 @@ ul.tabs li {
     position: relative;
     font-size: 28px;
     font-weight: 600;
+    margin-right: 10px;
+    transition: background-color .12s ease-in-out;
 }
 
 ul.tabs li:hover {
