@@ -5131,7 +5131,7 @@ html[dir="rtl"] .notification-left-aligned {
     background: none;
     border: 0;
     display: inline-block;
-    padding: 0;
+    padding: 0 0 4px 0;
     text-align: initial;
     vertical-align: middle;
 }
