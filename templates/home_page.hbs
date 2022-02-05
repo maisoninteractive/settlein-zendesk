@@ -317,7 +317,7 @@
 
               <div class="language-dropdown">
                 <div class="header-language-selector">
-                  {{#if alternative_locales}}
+                  {{#if locale}}
                   <div class="dropdown language-selector">
                     <button class="dropdown-toggle" aria-haspopup="true">
                       Select Language
@@ -328,10 +328,10 @@
                       </svg>
                     </button>
                     <span class="dropdown-menu dropdown-menu-end" role="menu">
-                      <a href="#" dir="ltr" rel="nofollow" role="menuitem">{{current_locale.name}}</a>
-                      {{#each alternative_locales}}
-                      <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                        {{name}}
+                      <a href="#" dir="ltr" rel="nofollow" role="menuitem"></a>
+                      {{#each locale}}
+                      <a href="{{locale.url}}" dir="{{locale.direction}}" rel="nofollow" role="menuitem">
+                        {{locale.name}}
                       </a>
                       {{/each}}
                     </span>
