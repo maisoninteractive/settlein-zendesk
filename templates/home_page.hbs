@@ -57,7 +57,7 @@
 
   <h3 class="section-title">Browse common questions</h3>
 
-  <ul class="tabs">
+  <ul id="common_questions" class="tabs">
     {{#each (slice categories 0 5) }}
     <li class="{{#is @index 0}}active{{/is}} tab-header" rel="{{id}}">{{name}}</li>
     {{/each}}
@@ -172,7 +172,8 @@
 
     // Hide the content and show the first tab
     hide(".tab_content");
-    fadeIn(document.querySelector("#tab1"));
+    var parentElement = document.getElementById("common_questions");
+    fadeIn(document.querySelector(parentElement.firstChild));
 
     //Desktop Tabs
     var tabLi = document.querySelectorAll("ul.tabs li");
