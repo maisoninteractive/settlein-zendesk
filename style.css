@@ -1553,7 +1553,7 @@ input[type="submit"][disabled] {
 }
 
 .section.new-articles {
-    background-color: #f8f9fc;
+    background-color: #4e7ee6;
     padding: 50px 0;
     margin-top: 20px;
     overflow: hidden;
@@ -5280,6 +5280,15 @@ html[dir="rtl"] .notification-left-aligned {
     flex-wrap: wrap;
 }
 
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-center-spaced-15-80 {
+    margin-right: 15px;
+}
+
 .flex-col-lg-6 {
     margin-bottom: 15px;
 }
@@ -5289,6 +5298,14 @@ html[dir="rtl"] .notification-left-aligned {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
+    }
+    .flex-col-auto {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        max-width: 50%;
+    }
+    .flex-center-spaced-80 {
+        margin-right: 80px;
     }
 }
 
