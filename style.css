@@ -1547,7 +1547,7 @@ input[type="submit"][disabled] {
 .section.articles {
     background-color: #f8f9fc;
     padding: 50px 0;
-    margin-top: 40px;
+    margin-top: 20px;
     overflow: hidden;
     position: relative;
 }
@@ -5295,8 +5295,9 @@ h3.section-title {
     position: relative;
     z-index: 2;
     transition: all 0.3s;
+    margin: 0 10px;
     padding-right: 15px;
-    padding-bottom: 35px;
+    padding-bottom: 50px;
     padding-top: 35px;
     background-color: #f8f9fc;
     overflow: hidden;
@@ -5463,7 +5464,6 @@ ul.tabs li.active {
 .tab_content .article-list>li {
     padding: 20px 0;
     border-bottom: 1px solid #4e7ee6;
-    margin-bottom: 20px;
 }
 
 .tab_content .article-list>li a {
