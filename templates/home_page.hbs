@@ -70,7 +70,7 @@
       {{#each sections}}
       <div class="blocks-item-text-container">
         <ul class="article-list">
-          {{#each (splice articles 0 5)}}
+          {{#each (slice articles 0 5)}}
           <li>
             <a href="{{url}}" class="article-item">{{title}}</a>
           </li>
