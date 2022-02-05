@@ -1,0 +1,28 @@
+<section id="main-content" class="section article-hero hero">
+  	<div class="hero-inner">
+  	</div>
+  <h1>About Us</h1>
+</section>
+<div class="container">
+  <div class="article-container" id="article-container">
+    <article id="main-content" class="about-us">
+      <header class="article-header">
+        <h1 title="{{article.title}}" class="article-title">
+          {{article.title}}
+          {{#if article.internal}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 16 16" class="icon-lock svg-20" title="{{t 'internal'}}">
+              <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+              <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+            </svg>
+          {{/if}}
+        </h1>
+      </header>
+
+      <section class="article-info">
+        <div class="article-content">
+          <div class="article-body">{{article.body}}</div>
+        </div>
+      </section>
+    </article>
+  </div>
+</div>
