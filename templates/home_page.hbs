@@ -27,7 +27,7 @@
 
     <div class="flex-row">
       {{#each (slice categories 0 1) }}
-      {{#each (slice sections 0 5) }}
+      {{#each (slice sections 0 6) }}
 
       <div class="flex-col-lg-6">
         <div class="item-img-left">
@@ -38,8 +38,9 @@
                   text-anchor="middle" alignment-baseline="middle" font-family="monospace, sans-serif"
                   fill="#555555">150×150</text>
               </svg>
+              <div class="item-img-caption">{{name}}</div>
             </div>
-            <div class="item-img-caption">{{name}}</div>
+
           </div>
           <div class="item-text">
             <h4><a href="{{url}}">{{description}}</a></h4>
@@ -54,74 +55,36 @@
     </div>
   </div>
 
+  <h3 class="section-title">Browse common questions</h3>
 
-  <section class="section knowledge-base">
-    <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
-    <section class="categories blocks">
-      <ul class="blocks-list">
-        {{#each categories}}
-        {{#if ../has_multiple_categories}}
-        <li class="blocks-item">
-          <a href='{{url}}' class="blocks-item-link">
-            <span class="blocks-item-title">{{name}}</span>
-            <span class="blocks-item-description">{{excerpt description}}</span>
-          </a>
-        </li>
-        {{else}}
-        {{#each sections}}
-        <li class="blocks-item">
-          <a href='{{url}}' class="blocks-item-link">
-            <span class="blocks-item-title">
-              {{name}}
-            </span>
-            <span class="blocks-item-description">{{excerpt description}}</span>
-          </a>
-        </li>
-        {{/each}}
-        {{/if}}
-        {{/each}}
-      </ul>
-      {{pagination}}
-    </section>
+  <ul class="tabs">
+    {{#each (slice categories 1 5) }}
+    <li class="{{#is @index 1}}active{{/is}} tab-header" rel="{{id}}">{{name}}</li>
+    {{/each}}
+  </ul>
+  <div class="tab_container">
+    {{#each (slice categories 1 5) }}
+    <h3 class="d_active tab_drawer_heading" rel="{{id}}">{{name}}</h3>
+    <div id="{{id}}" class="tab_content">
 
-    {{#if promoted_articles}}
-    <section class="articles">
-      <h2>{{t 'promoted_articles'}}</h2>
-      <ul class="article-list promoted-articles">
-        {{#each promoted_articles}}
-        <li class="promoted-articles-item">
-          <a href="{{url}}">
-            {{title}}
+      {{#each sections}}
+      <div class="blocks-item-text-container">
+        <ul class="article-list">
+          {{#each (splice articles 0 5)}}
+          <li>
+            <a href="{{url}}" class="article-item">{{title}}</a>
+          </li>
 
-            {{#if internal}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
-              class="icon-lock" title="{{t 'internal'}}">
-              <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1" />
-              <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5" />
-            </svg>
-            {{/if}}
-          </a>
-        </li>
-        {{/each}}
-      </ul>
-    </section>
-    {{/if}}
-  </section>
+          {{/each}}
+        </ul>
+        <a href="{{url}}" class="see-all">{{dc'see_all_articles'}}</a>
+      </div>
 
-  {{#if help_center.community_enabled}}
-  <section class="section home-section community">
-    <h2>{{t 'community'}}</h2>
-    {{#link 'community' class='community-link'}}
-    {{t 'join_conversation'}}
-    {{/link}}
+      {{/each}}
+      <!-- #tab{{id}} -->
+    </div>
+    {{/each}}
 
-    <div class="community-image"></div>
-  </section>
-  {{/if}}
-
-  <section class="section home-section activity">
-    {{#if settings.show_recent_activity}}
-    {{recent_activity}}
-    {{/if}}
-  </section>
+  </div>
+  <!-- .tab_container -->
 </div>
