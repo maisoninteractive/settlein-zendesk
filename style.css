@@ -1556,7 +1556,6 @@ input[type="submit"][disabled] {
     background-color: #4e7ee6;
     padding: 50px 0;
     margin-top: 20px;
-    overflow: hidden;
     position: relative;
 }
 
@@ -5304,7 +5303,7 @@ html[dir="rtl"] .notification-left-aligned {
         flex: 1 1 auto;
         max-width: 50%;
     }
-    .flex-center-spaced-80 {
+    .flex-center-spaced-15-80 {
         margin-right: 80px;
     }
 }
@@ -5521,13 +5520,13 @@ ul.tabs li.active {
 
 .topics-container .topics-icon-col,
 .language-container .language-icon-col {
-    flex: 1 1 auto;
+    flex: 3 0 auto;
 }
 
 .topics-container .topics-icon-col svg,
 .language-container .language-icon-col svg {
     fill: #000000;
-    width: 50px;
+    width: 40px;
 }
 
 .language-dropdown,
@@ -5540,4 +5539,11 @@ ul.tabs li.active {
 
 .top-header {
     text-align: left;
+}
+
+
+/**** Helpers ****/
+
+.text-center {
+    text-align: center;
 }
