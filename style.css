@@ -1548,6 +1548,8 @@ input[type="submit"][disabled] {
     background-color: #f8f9fc;
     padding: 50px 0;
     margin-top: 40px;
+    overflow: hidden;
+    position: relative;
 }
 
 
@@ -5421,7 +5423,6 @@ ul.tabs li.active {
     clear: both;
     float: left;
     width: 100%;
-    background: #fff;
     overflow: auto;
 }
 
@@ -5457,6 +5458,22 @@ ul.tabs li.active {
         background-color: #ffffff;
         color: #000000;
     }
+}
+
+.tab_content .article-list>li {
+    padding: 20px 0;
+    border-bottom: 1px solid #4e7ee6;
+    margin-bottom: 20px;
+}
+
+.tab_content .article-list>li a {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tab_content .article-list>li a:hover {
+    color: #4e7ee6;
 }
 
 

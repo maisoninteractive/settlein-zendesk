@@ -58,7 +58,7 @@
 
 
 </div>
-<section class="articles">
+<section class="section articles">
   <div class="container">
     <h3 class="section-title">Browse common questions</h3>
 
@@ -71,21 +71,19 @@
       {{#each (slice categories 0 5) }}
       <h3 class="d_active tab_drawer_heading" rel="tab{{@index}}">{{name}}</h3>
       <div id="tab{{@index}}" class="tab_content">
-
-        {{#each (slice sections 0 5)}}
-        <div class="blocks-item-text-container">
+        <div class="articles-container">
           <ul class="article-list">
+            {{#each (slice sections 0 5)}}
             {{#each (slice articles 0 5)}}
             <li>
               <a href="{{url}}" class="article-item">{{title}}</a>
             </li>
+            {{/each}}
 
             {{/each}}
           </ul>
           <a href="{{url}}" class="see-all">{{dc'see_all_articles'}}</a>
         </div>
-
-        {{/each}}
         <!-- #tab{{id}} -->
       </div>
       {{/each}}
