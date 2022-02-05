@@ -5526,6 +5526,8 @@ ul.tabs li.active {
 .language-container .language-icon-col svg {
     fill: #000000;
     width: 40px;
+    margin-top: 3px;
+    margin-bottom: -2px;
 }
 
 .language-dropdown,
