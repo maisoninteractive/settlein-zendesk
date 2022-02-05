@@ -58,12 +58,12 @@
   <h3 class="section-title">Browse common questions</h3>
 
   <ul class="tabs">
-    {{#each (slice categories 1 5) }}
-    <li class="{{#is @index 1}}active{{/is}} tab-header" rel="{{id}}">{{name}}</li>
+    {{#each (slice categories 0 5) }}
+    <li class="{{#is @index 0}}active{{/is}} tab-header" rel="{{id}}">{{name}}</li>
     {{/each}}
   </ul>
   <div class="tab_container">
-    {{#each (slice categories 1 5) }}
+    {{#each (slice categories 0 5) }}
     <h3 class="d_active tab_drawer_heading" rel="{{id}}">{{name}}</h3>
     <div id="{{id}}" class="tab_content">
 
