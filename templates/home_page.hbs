@@ -274,7 +274,12 @@
 <section class="sections">
   <div class="container">
     <div class="flex-grid-section">
-      <script> const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
+      <script>
+        const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
+        Handlebars.registerHelper('stripScripts', function (param) {
+          var regex = /(<([^>]+)>)/ig
+          return truncate(param.replace(regex, ""), 120, '...');
+        });
       </script>
       <div class="flex-row">
         {{#each categories }}
@@ -297,11 +302,12 @@
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
               <div class="article-description">
                 <script>
+                  { {stripScripts body } }
                   // let article = $body.replace(/(<([^>]+)>)/gi, "");
                   // article = truncate(article, 20, '...');
                   //  document.body.appendChild(article);
-                  var article = $body;
-                  document.body.appendChild(truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...'));
+                  //var article = $body;
+                  //document.body.appendChild(truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...'));
                 </script>
               </div>
             </div>
