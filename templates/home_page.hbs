@@ -295,7 +295,8 @@
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
               <script>
-                var article = truncate("{{ body }}", 20, '...');
+                let article = "{{ body }}";
+                article = truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...');
                 document.body.appendChild(article);
               </script>
             </div>
@@ -315,10 +316,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function ($) {
 
-    const truncate = (str, max, suffix) => {
-      str = str.replace(/(<([^>]+)>)/gi, "");
-      str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
-    }
+    const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
 
 
     // Helper Functions
