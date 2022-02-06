@@ -300,8 +300,8 @@
                   // let article = $body.replace(/(<([^>]+)>)/gi, "");
                   // article = truncate(article, 20, '...');
                   //  document.body.appendChild(article);
-
-                  document.body.appendChild(truncate($body.replace(/(<([^>]+)>)/gi, ""), 20, '...'));
+                  var article = $body;
+                  document.body.appendChild(truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...'));
                 </script>
               </div>
             </div>
