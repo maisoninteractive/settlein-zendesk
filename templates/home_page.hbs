@@ -274,7 +274,8 @@
 <section class="sections">
   <div class="container">
     <div class="flex-grid-section">
-
+      <script> const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
+      </script>
       <div class="flex-row">
         {{#each categories }}
         {{#each sections }}
@@ -320,7 +321,6 @@
 <script>
   document.addEventListener('DOMContentLoaded', function ($) {
 
-    const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
 
 
     // Helper Functions
