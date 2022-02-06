@@ -171,7 +171,6 @@
               </div>
             </div>
           </div>
-
           <div class="flex-col-auto max-width-250">
             <div class="language-container">
               <div class="language-icon-col text-center">
@@ -263,21 +262,51 @@
               </div>
               <div class="language-dropdown">
                 <div id="filter-language-selector" class="text-center">
-
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
   </div>
   <div class="container">
+    <div class="flex-grid-section">
 
+      <div class="flex-row">
+        {{#each categories }}
+        {{#each sections }}
+        {{#each articles}}
+        <div class="flex-col-lg-6">
+          <div class="item-img-left">
+            <div class="item_img">
+              <div class="img_wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
+                  <rect x="2" y="2" width="146" height="146" style="fill:#DEDEDE;" /><text x="50%" y="50%"
+                    font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="monospace, sans-serif"
+                    fill="#555555">300x300</text>
+                </svg>
+
+              </div>
+
+            </div>
+            <div class="item-text">
+              <div class="article-title"><a href="{{url}}">{{title}}</a></div>
+              <h4><a href="{{url}}">{{description}}</a></h4>
+            </div>
+          </div>
+          <div class="space-15"></div>
+        </div>
+        {{/each}}
+        {{/each}}
+        {{/each}}
+
+      </div>
+    </div>
+    <div class="pagination">{{pagination}}</div>
   </div>
 </section>
+
 <script>
   document.addEventListener('DOMContentLoaded', function ($) {
 

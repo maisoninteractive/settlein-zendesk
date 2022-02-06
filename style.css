@@ -5535,6 +5535,15 @@ ul.tabs li.active {
     flex: 20 1 auto;
 }
 
+.topics-dropdown .dropdown-menu {
+    right: -37px;
+    padding: 5px 0;
+}
+
+.topics-dropdown .dropdown-menu [role="menuitem"] {
+    padding: 5px 10px 5px 10px;
+}
+
 
 /**** Cusrtomization ****/
 
@@ -5544,8 +5553,8 @@ ul.tabs li.active {
 
 .topics-selector button svg,
 .topics-selector button i,
-.language-selector button svg,
-.language-selector button i {
+#filter-language-selector .language-selector button svg,
+#filter-language-selector .language-selector button i {
     margin-left: 30px;
 }
 
