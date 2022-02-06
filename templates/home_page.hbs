@@ -301,14 +301,12 @@
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
               <div class="article-description">
-                {{stripScripts body }}
                 <script>
-
                   // let article = $body.replace(/(<([^>]+)>)/gi, "");
                   // article = truncate(article, 20, '...');
                   //  document.body.appendChild(article);
-                  //var article = $body;
-                  //document.body.appendChild(truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...'));
+                  var article = '{{{ body }}}';
+                  document.body.appendChild(truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...'));
                 </script>
               </div>
             </div>
