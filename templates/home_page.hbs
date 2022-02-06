@@ -292,7 +292,10 @@
             </div>
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
-              {{LEFTPART(body 200)}}
+              <script>
+                var article = truncate({{ body }} , 20, '...');
+
+              </script>
             </div>
           </div>
           <div class="space-15"></div>
@@ -309,6 +312,9 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function ($) {
+
+    const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
+
 
     // Helper Functions
 
