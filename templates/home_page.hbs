@@ -294,11 +294,13 @@
             </div>
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
-              <script>
-                let article = $body;
-                article = truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...');
-                document.body.appendChild(article);
-              </script>
+              <div class="article-description">
+                <script>
+                  let article = $body.replace(/(<([^>]+)>)/gi, "");
+                  article = truncate(article, 20, '...');
+                  document.body.appendChild(article);
+                </script>
+              </div>
             </div>
           </div>
           <div class="space-15"></div>
