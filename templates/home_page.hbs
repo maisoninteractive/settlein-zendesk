@@ -295,7 +295,7 @@
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
               <script>
-                let article = "{{ body }}";
+                let article = $body;
                 article = truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...');
                 document.body.appendChild(article);
               </script>
