@@ -301,8 +301,9 @@
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
               <div class="article-description">
+                {{stripScripts body }}
                 <script>
-                  { {stripScripts body } }
+
                   // let article = $body.replace(/(<([^>]+)>)/gi, "");
                   // article = truncate(article, 20, '...');
                   //  document.body.appendChild(article);
