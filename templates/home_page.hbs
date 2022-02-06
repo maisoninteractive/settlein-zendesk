@@ -305,7 +305,7 @@
                   // let article = $body.replace(/(<([^>]+)>)/gi, "");
                   // article = truncate(article, 20, '...');
                   //  document.body.appendChild(article);
-                  var article = '{{{ body }}}';
+                  var article = '{{ body }}';
                   document.body.appendChild(truncate(article.replace(/(<([^>]+)>)/gi, ""), 20, '...'));
                 </script>
               </div>
