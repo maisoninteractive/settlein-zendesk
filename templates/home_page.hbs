@@ -295,7 +295,8 @@
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
               <script>
-                truncate({{ body }} , 120, '...');
+                var article = truncate("{{ body }}", 20, '...');
+                document.body.appendChild(article);
               </script>
             </div>
           </div>
