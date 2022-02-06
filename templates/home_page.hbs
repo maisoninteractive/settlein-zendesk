@@ -297,10 +297,10 @@
             <div class="item-text">
               <div class="article-title"><a href="{{url}}">{{title}}</a></div>
               <div class="article-description">
-                <script>
-                  var article = '\{{ body }}';
-                  document.body.appendChild(truncate(article, 120, '...'));
-                </script>
+                {{{{raw}}}}
+                {{body}}
+                {{{{/raw}}}}
+
               </div>
             </div>
           </div>
