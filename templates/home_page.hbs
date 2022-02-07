@@ -274,19 +274,24 @@
 <section class="sections">
   <div class="container">
     <div class="flex-grid-section">
-      <script>
-        const truncate = (str, max, suffix) => str.length < max ? str : `${str.substr(0, str.substr(0, max - suffix.length).lastIndexOf(' '))}${suffix}`;
-      </script>
       <div class="flex-row">
         {{#each categories }}
         {{#each sections }}
         {{#each articles}}
         <div class="flex-col-lg-6">
-          <div class="item-img-left">
+          <div class="article-img-left">
             <div class="item_img">
               <div class="img_wrap">
-                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
-                  <rect x="2" y="2" width="146" height="146" style="fill:#DEDEDE;" /><text x="50%" y="50%"
+                {{#each attachments}}
+                <span>({{content_type}})</span>
+                {{#is content_type image/jpg}}
+                <img src="{{url}}" />
+                {{/is}}
+                {{/each}}
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="230" height="230">
+                  <rect x="2" y="2" width="230" height="230" style="fill:#DEDEDE;" /><text x="50%" y="50%"
                     font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="monospace, sans-serif"
                     fill="#555555">300x300</text>
                 </svg>
@@ -299,9 +304,15 @@
               <div class="article-description">
                 {{excerpt body characters=150}}
               </div>
+              <a href="{{url}}" class="read-story-button" role="button">
+                <span class="button-content-wrapper">
+                  <span class="button-icon align-icon-right">
+                    <i aria-hidden="true" class="fas fa-arrow-right"></i> </span>
+                  <span class="button-text">Read Story</span>
+                </span>
+              </a>
             </div>
           </div>
-          <div class="space-15"></div>
         </div>
         {{/each}}
         {{/each}}
@@ -309,7 +320,7 @@
 
       </div>
     </div>
-    <div class="pagination">{{pagination}}</div>
+    <div class="pagination">{{pagination articles}}</div>
   </div>
 </section>
 
