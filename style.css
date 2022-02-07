@@ -5334,23 +5334,23 @@ h3.section-title {
     transition: all 0.3s;
     margin: 0 30px;
     padding-right: 15px;
-    padding-bottom: 0;
-    padding-top: 35px;
-    background-color: #f8f9fc;
+    padding-top: 15px;
+    padding-bottom: 15px;
     overflow: hidden;
     height: 100%;
     min-height: 230px;
+    background-color: #f8f9fc;
 }
 
 .item-img-left .item_img {
     position: absolute;
     left: 0;
     top: 0;
-    height: 230px;
-    width: 230px;
+    height: 90px;
+    width: 90px;
     z-index: 2;
-    margin-left: 0;
-    margin-top: 0;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 
 .article-img-left .item_img {
@@ -5415,6 +5415,19 @@ h3.section-title {
 .item-text h4 a,
 .item-text a {
     text-decoration: none;
+}
+
+.item-text .article-title,
+.item-text .article-description,
+.item-text .read-story-button {
+    margin-bottom: 12px;
+}
+
+.item-text .article-title,
+.item-text .article-title a,
+.item-text .article-title h4 {
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .item-img-caption {
@@ -5600,7 +5613,7 @@ ul.tabs li.active {
     background-color: #3B70E3;
     border-radius: 22px 22px 22px 22px;
     line-height: 21px;
-    padding: 15px 25px 15px 25px;
+    padding: 10px 15px 10px 15px;
     width: auto;
     box-shadow: none;
     text-decoration: none;
