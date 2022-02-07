@@ -282,7 +282,7 @@
           <div class="article-img-left">
             <div class="item_img">
               <div class="img_wrap">
-                {{#each attachments}}
+                {{#each articles.attachments}}
                 <span>({{content_type}})</span>
                 {{#is content_type 'image/jpg'}}
                 <img src="{{url}}" />
@@ -315,12 +315,13 @@
           </div>
         </div>
         {{/each}}
+        <div class="pagination">{{pagination}}</div>
         {{/each}}
         {{/each}}
 
       </div>
     </div>
-    <div class="pagination">{{pagination articles}}</div>
+
   </div>
 </section>
 
