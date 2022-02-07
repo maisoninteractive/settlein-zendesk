@@ -1,10 +1,20 @@
 {
     "name": "SettleIn",
     "author": "Zendesk",
-    "version": "2.13.70",
+    "version": "2.13.71",
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [{
+            "label": "General",
+            "variables": [{
+                "identifier": "core_slogan",
+                "type": "text",
+                "description": "core_slogan_description",
+                "label": "core_slogan_label",
+                "value": "Learn on the go"
+            }]
+        },
+        {
             "label": "colors_group_label",
             "variables": [{
                     "identifier": "brand_color",

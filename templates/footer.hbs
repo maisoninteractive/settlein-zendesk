@@ -1,25 +1,65 @@
 <footer class="footer">
   <div class="footer-inner">
-    {{#link 'help_center'}}{{help_center.name}}{{/link}}
 
-    <div class="footer-language-selector">
-      {{#if alternative_locales}}
-        <div class="dropdown language-selector">
-          <button class="dropdown-toggle" aria-haspopup="true">
-            {{current_locale.name}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-            </svg>
-          </button>
-          <span class="dropdown-menu dropdown-menu-end" role="menu">
-            {{#each alternative_locales}}
-              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                {{name}}
-              </a>
-            {{/each}}
-          </span>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="box">
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                {{asset 'SettleIn-Logo-x2.png'}}
+                {{ settings.core_slogan }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-md-4">
+              <div class="box">
+                {{asset 'App-Store.webp'}}
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-4">
+              <div class="box">
+                {{asset 'Google-Store.webp'}}
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-4">
+              <div class="box">
+                {{asset 'Desktop-App.webp'}}
+              </div>
+            </div>
+          </div>
+
         </div>
-      {{/if}}
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="box">
+          <p>
+            The content on this website is developed by the Cultural Orientation Resource Exchange (CORE), is in the
+            public domain, and may be reproduced. The contents of this website were developed under an agreement
+            financed by the Bureau of Population, Refugees, and Migration, United States Department of State, but do
+            not necessarily represent the policy of that agency and should not assume endorsement by the Federal
+            Government.
+          </p>
+          <div class="row">
+            <div class="col-xs-4 col-md-4">
+              <div class="box">
+                {{asset 'U.S.A-Flag.webp'}}
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-4">
+              <div class="box">
+                {{asset 'International-Rescue-Commitee.webp'}}
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-4">
+              <div class="box">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
