@@ -5407,6 +5407,10 @@ h3.section-title {
     line-height: 21px;
 }
 
+.item-text a.read-story-button {
+    color: #FFFFFF;
+}
+
 .item-text h4 a:hover,
 .item-text a:hover {
     color: #5dd191;
@@ -5446,6 +5450,25 @@ h3.section-title {
 
 [class*="space-"] {
     clear: both;
+}
+
+@media (max-width: 768px) {
+    .item-img-left {
+        margin: 0;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        padding-top: 15px;
+    }
+    .article-img-left {
+        padding-left: 10px;
+        margin: 0;
+        padding-right: 10px;
+    }
+    .article-img-left .item_img {
+        position: relative;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
 }
 
 
