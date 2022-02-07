@@ -2,8 +2,7 @@
 
 /*Including Flexbox Grid*/
 
-@import $assets-flexboxgrid-min-css;
-
+@import url($assets-flexboxgrid-min-css;)
 /***** Normalize.css *****/
 
 
