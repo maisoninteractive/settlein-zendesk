@@ -1219,6 +1219,10 @@ input[type="submit"][disabled] {
     max-width: 80px;
 }
 
+.footer .us-flag {
+    min-width: 220px;
+}
+
 
 /***** Breadcrumbs *****/
 
@@ -5710,4 +5714,8 @@ ul.tabs li.active {
 
 .max-width-250 {
     max-width: 250px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
 }
