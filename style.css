@@ -1207,6 +1207,18 @@ input[type="submit"][disabled] {
     display: inline-block;
 }
 
+.footer-logo {
+    max-width: 150px;
+}
+
+.footer-slogan {
+    font-size: 20px;
+}
+
+.footer .irc-logo {
+    max-width: 80px;
+}
+
 
 /***** Breadcrumbs *****/
 
