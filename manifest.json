@@ -1,7 +1,7 @@
 {
     "name": "SettleIn",
     "author": "Zendesk",
-    "version": "2.13.77",
+    "version": "2.13.78",
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [{
@@ -281,13 +281,6 @@
                     "description": "scoped_community_search_description",
                     "label": "scoped_community_search_label",
                     "value": true
-                },
-                {
-                    "identifier": "hero_section_heading",
-                    "type": "text",
-                    "description": "Heading",
-                    "label": "Hero Section Title",
-                    "value": "How can we help?"
                 }
             ]
         },

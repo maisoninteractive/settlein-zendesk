@@ -397,3 +397,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 });
+
+(function($) {
+    "use strict";
+
+
+    function CoreThemeCore() {
+        var self = this;
+        self.init();
+    };
+
+    CoreThemeCore.prototype = {
+        /**
+         *  Initialize
+         */
+        init: function() {
+            var self = this;
+
+            // popup image
+            self.getMenu();
+
+
+        },
+        /**
+         *  Extensions: Load scripts
+         */
+
+
+        getMenu: function() {
+            let lang = $('html').attr('lang');
+            $.ajax({
+                url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
+                type: 'GET',
+                data: {
+                    'lang': lang.substring(0, 2)
+                },
+                dataType: 'json',
+                success: function(data) {
+                    let results = data.find('#menu-main-menu');
+                    $('#user-nav').html(results);
+                    $('#user-nav-mobile').html(results);
+                },
+                error: function(request, error) {
+                    console.log("Request: " + JSON.stringify(request));
+                }
+            });
+        },
+
+
+    }
+
+    $.coreThemeCore = CoreThemeCore.prototype;
+
+
+
+    $(document).ready(function() {
+        // Initialize script
+        new CoreThemeCore();
+
+    });
+
+})(jQuery);
