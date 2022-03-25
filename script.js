@@ -434,9 +434,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 dataType: 'json',
                 success: function(data) {
-                    let results = data.find('#menu-main-menu');
-                    $('#user-nav').html(results);
-                    $('#user-nav-mobile').html(results);
+                    let $content = '';
+                    data.forEach(element => {
+                        $content += '<li class=""><a href="' + element['url'] + '" class="" >' + element['title'] + "</a></li>";
+                    });
+                    $('#user-nav ul.user-nav-list').html($content);
+                    $('#user-nav-mobile ul.menu-list-mobile-items').html($content);
                 },
                 error: function(request, error) {
                     console.log("Request: " + JSON.stringify(request));
