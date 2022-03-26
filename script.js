@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         },
         checkURL: function(url) {
-            return (url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+            return ($(url).match(/\.(jpeg|jpg|gif|png)$/) != null);
         },
         getMenu: function() {
             let lang = $('html').attr('lang');
