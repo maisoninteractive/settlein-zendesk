@@ -489,17 +489,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     dataType: 'json'
                 });
                 $.when(getImage[element['id']]).done(function(imageUrl) {
-                    if (typeof imageUrl.article_attachments[0] === 'undefined') {
-                        $('#img-wrap-' + element['id']).remove();
-                        $('#article-wrap-' + element['id']).css({ 'padding-lef': '25px' });
-                    } else {
+                    if (typeof imageUrl.article_attachments[0] !== 'undefined') {
                         let urlimg = imageUrl.article_attachments[0].content_url;
-                        if (!self.checkURL(urlimg) || (typeof urlimg === 'undefined')) {
+                        if (self.checkURL(urlimg) || (typeof urlimg !== 'undefined')) {
+                            $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
+                        } else {
                             $('#img-wrap-' + element['id']).remove();
                             $('#article-wrap-' + element['id']).css({ 'padding-left': '25px' });
-                        } else {
-                            $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
                         }
+                    } else {
+                        $('#img-wrap-' + element['id']).remove();
+                        $('#article-wrap-' + element['id']).css({ 'padding-left': '25px' });
                     }
                 });
 
