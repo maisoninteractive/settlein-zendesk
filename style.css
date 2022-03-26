@@ -5407,6 +5407,7 @@ h3.section-title {
 .item-img-left .item-text,
 .article-img-left .item-text {
     display: inline-block;
+    padding-top: 20px;
 }
 
 .img_wrap {

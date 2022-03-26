@@ -1,7 +1,7 @@
 {
     "name": "SettleIn",
     "author": "Zendesk",
-    "version": "2.13.96",
+    "version": "2.13.97",
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [{

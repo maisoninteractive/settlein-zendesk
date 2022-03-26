@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     let articlesContainer = $('#articles');
                     data['articles'].forEach(element => {
                         // console.log(element['url'] + " " + element['title']);
-                        let excerpt = $(element['body']).find('p').text().trim().substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
+                        let excerpt = $(element['body']).text().trim().substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
                         articlesContainer.append([{
                             html_url: element['html_url'],
                             id: element['id'],
