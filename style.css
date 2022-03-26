@@ -5730,8 +5730,9 @@ ul.tabs li.active {
 .search-full input[type="search"]::-webkit-input-placeholder,
 .search-full input[type="search"]::-moz-placeholder,
 .search-full input[type="search"]:-ms-input-placeholder,
-.search-full input[type="search"]:-moz-placeholder {
-    color: #000000;
+.search-full input[type="search"]:-moz-placeholder,
+.search-full input[type="search"]::placeholder {
+    color: #000000 !important;
     font-size: 16px;
     font-weight: 600;
 }
