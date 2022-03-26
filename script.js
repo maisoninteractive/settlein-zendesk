@@ -489,11 +489,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     dataType: 'json'
                 });
                 $.when(getImage[element['id']]).done(function(imageUrl) {
-                    if (typeof imageUrl.article_attachments[0] !== 'undefined') {
+                    if (typeof imageUrl.article_attachments[0].content_url !== 'undefined') {
                         $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
 
                         let urlimg = imageUrl.article_attachments[0].content_url;
-                        console.log(self.checkURL(urlimg));
+                        console.log("zxczxcxzc: ".self.checkURL(urlimg));
                     } else {
                         $('img-wrap-' + element['id']).remove();
                         $('article-wrap-' + element['id']).css({ 'padding-lef': '25px' });
@@ -504,7 +504,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         },
         checkURL: function(url) {
-            return ($(url).match(/\.(jpeg|jpg|gif|png)$/) != null);
+            var arr = ["jpeg", "jpg", "gif", "png"];
+            var ext = url.substring(url.lastIndexOf(".") + 1);
+            if ($.inArray(ext, arr)) {
+                return true;
+            }
         },
         getMenu: function() {
             let lang = $('html').attr('lang');
