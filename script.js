@@ -489,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dataType: 'json'
                 });
                 $.when(getImage[element['id']]).done(function(imageUrl) {
-                    if (typeof imageUrl.article_attachments[0] !== 'undefined' && self.checkURL(imageUrl.article_attachments[0])) {
+                    if (typeof imageUrl.article_attachments[0] !== 'undefined' && self.checkURL(imageUrl.article_attachments[0].content_url)) {
                         $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
                     } else {
                         $('img-wrap-' + element['id']).remove();
