@@ -451,8 +451,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
-                <div class="article-img-left">
-                <div class="item_img">
+                <div id="article-wrap-${id}" class="article-img-left">
+                <div id="img-wrap-${id}" class="item_img">
                     <img id="article-${id}" src="" width="100%" height="100%" alt="${title}" title="${title}"/>
                 </div>
                 <div class="item-text">
@@ -491,6 +491,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 $.when(getImage[element['id']]).done(function(imageUrl) {
                     if (typeof imageUrl.article_attachments[0] !== 'undefined') {
                         $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
+                    } else {
+                        $('img-wrap-' + element['id']).remove();
+                        $('article-wrap-' + element['id']).css({ 'padding-lef': '25px' });
                     }
                 });
 
