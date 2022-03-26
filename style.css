@@ -5361,15 +5361,8 @@ h3.section-title {
 }
 
 .item-img-left {
-    /* padding-left: 130px; */
-    /* min-height: 77px; */
-    /* position: relative; */
-    /* z-index: 2; */
     transition: all 0.3s;
-    margin: 15px;
-    /* padding-right: 15px; */
-    /* padding-bottom: 50px; */
-    /* padding-top: 35px; */
+    padding: 5px 10px;
     background-color: #f8f9fc;
     overflow: hidden;
     height: 100%;
@@ -5730,13 +5723,6 @@ ul.tabs li.active {
 }
 
 
-/* Flexboxgrid Overrid */
-
-[class*="col-"] {
-    margin-bottom: 20px;
-}
-
-
 /**** Helpers ****/
 
 .text-center {
@@ -5749,4 +5735,8 @@ ul.tabs li.active {
 
 .margin-top-20 {
     margin-top: 20px;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
 }
