@@ -453,6 +453,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
                 `;
 
+            let getImage = [];
             $.ajax({
                 url: 'https://www.settlein.support/api/v2/help_center/en-us/articles',
                 type: 'GET',
@@ -468,12 +469,27 @@ document.addEventListener('DOMContentLoaded', function() {
                             title: element['title'],
                             body: excerpt
                         }, ].map(article).join(''));
+
+                        getImage[element['id']] = $.ajax({
+                            url: 'https://www.settlein.support/api/v2/articles/' + element['id'] + '/attachments.json',
+                            type: 'GET',
+                            dataType: 'json'
+                        });
+
+
                     });
                 },
                 error: function(request, error) {
                     console.log("Request: " + JSON.stringify(request));
                 }
             });
+
+            getImage.forEach((element, index) => {
+                $.when(element[index]).done(function(imageUrl) {
+                    $('#article-' + index).attr('src', imageUrl.article_attachments[0].content_url);
+                });
+            });
+
         },
         getMenu: function() {
             let lang = $('html').attr('lang');
