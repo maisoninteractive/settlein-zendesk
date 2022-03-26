@@ -432,9 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-6 margin-bottom-20">
                 <div class="article-img-left">
                 <div class="item_img">
-                    <div class="img_wrap">
                     <img id="article-${id}" src="" width="100%" height="100%" alt="${title}" title="${title}"/>
-                    </div>
                 </div>
                 <div class="item-text">
                     <div class="article-title"><a href="${html_url}">${title}</a></div>
@@ -453,13 +451,14 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
                 `;
 
-            let getImage = [];
+
             $.ajax({
                 url: 'https://www.settlein.support/api/v2/help_center/en-us/articles',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
                     let articlesContainer = $('#articles');
+                    let getImage = [];
                     data['articles'].forEach(element => {
                         // console.log(element['url'] + " " + element['title']);
                         let excerpt = $(element['body']).text().trim().substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
@@ -475,7 +474,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             type: 'GET',
                             dataType: 'json'
                         });
-
+                        $.when(getImage[element['id']]).done(function(imageUrl) {
+                            $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
+                        });
 
                     });
                 },
@@ -483,13 +484,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log("Request: " + JSON.stringify(request));
                 }
             });
-
-            getImage.forEach((element, index) => {
-                $.when(element[index]).done(function(imageUrl) {
-                    $('#article-' + index).attr('src', imageUrl.article_attachments[0].content_url);
-                });
-            });
-
         },
         getMenu: function() {
             let lang = $('html').attr('lang');

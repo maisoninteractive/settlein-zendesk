@@ -5410,10 +5410,11 @@ h3.section-title {
     padding-top: 20px;
 }
 
-.img_wrap {
-    /* overflow: hidden;
-    width: 100%;
-    height: 100%; */
+.article-img-left .item_img img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 .item-img-left .item_img img,

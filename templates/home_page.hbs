@@ -368,43 +368,6 @@
   <div class="container">
     <div class="grid-section">
       <div id="articles" class="row">
-
-      </div>
-      <div class="row">
-        {{#each categories }}
-        {{#each sections }}
-        {{#each articles }}
-        <div class="col-lg-6 margin-bottom-20">
-          <div class="article-img-left">
-            <div class="item_img">
-              <div class="img_wrap">
-                <svg xmlns="http://www.w3.org/2000/svg" width="230" height="230">
-                  <rect x="2" y="2" style="fill:#DEDEDE;width: 100%;height: 100%;"></rect><text x="50%" y="50%"
-                    font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="monospace, sans-serif"
-                    fill="#555555">230x230</text>
-                </svg>
-
-              </div>
-
-            </div>
-            <div class="item-text">
-              <div class="article-title"><a href="{{url}}">{{title}}</a></div>
-              <div class="article-description">
-                {{excerpt body characters=150}}
-              </div>
-              <a href="{{url}}" class="read-story-button" role="button">
-                <span class="button-content-wrapper">
-                  <span class="button-icon align-icon-right">
-                    <i aria-hidden="true" class="fas fa-arrow-right"></i> </span>
-                  <span class="button-text">Read Story</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        {{/each}}
-        {{/each}}
-        {{/each}}
       </div>
     </div>
     <div class="pagination">{{pagination}}</div>
