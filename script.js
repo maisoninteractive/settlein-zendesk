@@ -490,8 +490,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 $.when(getImage[element['id']]).done(function(imageUrl) {
                     if (typeof imageUrl.article_attachments[0] === 'undefined') {
-                        $('img-wrap-' + element['id']).remove();
-                        $('article-wrap-' + element['id']).css({ 'padding-lef': '25px' });
+                        $('#img-wrap-' + element['id']).remove();
+                        $('#article-wrap-' + element['id']).css({ 'padding-lef': '25px' });
                     } else {
                         let urlimg = imageUrl.article_attachments[0].content_url;
                         if (!self.checkURL(urlimg) || (typeof urlimg === 'undefined')) {
