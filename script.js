@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
 
                         let urlimg = imageUrl.article_attachments[0].content_url;
-                        console.log("zxczxcxzc: ".self.checkURL(urlimg));
+                        console.log("zxczxcxzc: " + self.checkURL(urlimg));
                     } else {
                         $('img-wrap-' + element['id']).remove();
                         $('article-wrap-' + element['id']).css({ 'padding-lef': '25px' });
