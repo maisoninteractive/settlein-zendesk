@@ -1298,6 +1298,8 @@ input[type="submit"][disabled] {
     padding-right: 40px;
     -webkit-appearance: none;
     width: 100%;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 [dir="rtl"] .search input[type="search"] {
@@ -1307,7 +1309,7 @@ input[type="submit"][disabled] {
 
 .search input[type="search"]:focus {
     border: 1px solid $brand_color;
-    color: #555;
+    color: #000;
 }
 
 .search-full input[type="search"] {
@@ -5720,6 +5722,18 @@ ul.tabs li.active {
     -ms-flex-order: 10;
     order: 10;
     display: inline-block;
+}
+
+
+/* Placeholders */
+
+.search-full input[type="search"]::-webkit-input-placeholder,
+.search-full input[type="search"]::-moz-placeholder,
+.search-full input[type="search"]:-ms-input-placeholder,
+.search-full input[type="search"]:-moz-placeholder {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 
