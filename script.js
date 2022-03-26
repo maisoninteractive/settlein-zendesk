@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // getArticles('https://www.settlein.support/api/v2/help_center/en-us/sections/4926790142615/articles')
         },
         showArticles: function(data) {
-
+            var self = this;
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
                 <div id="article-wrap-${id}" class="article-img-left">
@@ -489,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dataType: 'json'
                 });
                 $.when(getImage[element['id']]).done(function(imageUrl) {
-                    if (typeof imageUrl.article_attachments[0] !== 'undefined' && (imageUrl.article_attachments[0].match(/\.(jpeg|jpg|gif|png)$/) != null)) {
+                    if (typeof imageUrl.article_attachments[0] !== 'undefined' && self.checkURL(imageUrl.article_attachments[0])) {
                         $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
                     } else {
                         $('img-wrap-' + element['id']).remove();
@@ -499,6 +499,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             });
 
+        },
+        checkURL: function(url) {
+            return (url.match(/\.(jpeg|jpg|gif|png)$/) != null);
         },
         getMenu: function() {
             let lang = $('html').attr('lang');
