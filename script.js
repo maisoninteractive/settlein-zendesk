@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="${html_url}" class="read-story-button" role="button">
                     <span class="button-content-wrapper">
                         <span class="button-icon align-icon-right">
-                        <i aria-hidden="true" class="fas fa-arrow-right"></i> </span>
+                        <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
                         <span class="button-text">Read Story</span>
                     </span>
                     </a>
