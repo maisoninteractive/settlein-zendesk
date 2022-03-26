@@ -428,6 +428,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         getArticles: function() {
 
+            $.fn.truncate = function(length) {
+                this.text(function(idx, txt) {
+                    return txt.length > length ? txt.substr(0, length) + '…' : txt;
+                });
+            }
+            $.fn.truncateCss = function(width) {
+                this.each(function() {
+                    $(this).css({
+                        width: width,
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                    });
+                });
+            }
+
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
                 <div class="article-img-left">
@@ -461,7 +477,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     let articlesContainer = $('#articles');
                     data['articles'].forEach(element => {
                         // console.log(element['url'] + " " + element['title']);
-                        articlesContainer.append(element.map(article).join(''));
+
+                        articlesContainer.append([{
+                            html_url: element['html_url'],
+                            id: element['id'],
+                            title: element['title'],
+                            body: element['body'].truncate(150)
+                        }, ].map(article).join(''));
                     });
                 },
                 error: function(request, error) {
