@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }, ].map(article).join(''));
 
                         getImage[element['id']] = $.ajax({
-                            url: 'https://www.settlein.support/api/v2/articles/' + element['id'] + '/attachments.json',
+                            url: 'https://www.settlein.support/hc/api/v2/articles/' + element['id'] + '/attachments.json',
                             type: 'GET',
                             dataType: 'json'
                         });
