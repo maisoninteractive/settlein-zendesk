@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
                  * timeout for cache in millis
                  * @type {number}
                  */
-                timeout: 30000,
+                timeout: 30000000,
                 /** 
                  * @type {{_: number, data: {}}}
                  **/
@@ -496,7 +496,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
 
-
             $.ajax({
                 url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
                 type: 'GET',
@@ -514,11 +513,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 $('#user-nav ul.user-nav-list').html($content);
                 $('#user-nav-mobile ul.menu-list-mobile-items').html($content);
             });
-
-
-
-
-
 
 
         },
