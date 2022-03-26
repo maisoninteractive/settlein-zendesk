@@ -489,7 +489,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     dataType: 'json'
                 });
                 $.when(getImage[element['id']]).done(function(imageUrl) {
-                    $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
+                    if (typeof imageUrl.article_attachments[0] !== 'undefined') {
+                        $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
+                    }
                 });
 
             });
