@@ -423,7 +423,49 @@ document.addEventListener('DOMContentLoaded', function() {
          *  Extensions: Load scripts
          */
 
+        getArticles: function() {
 
+            const article = ({ html_url, id, title, body }) => `
+                <div class="col-lg-6 margin-bottom-20">
+                <div class="article-img-left">
+                <div class="item_img">
+                    <div class="img_wrap">
+                    <img id="article-${id}" src="" width="100%" height="100%" alt="${title}" title="${title}"/>
+                    </div>
+                </div>
+                <div class="item-text">
+                    <div class="article-title"><a href="${html_url}">${title}</a></div>
+                    <div class="article-description">
+                    ${body}
+                    </div>
+                    <a href="${html_url}" class="read-story-button" role="button">
+                    <span class="button-content-wrapper">
+                        <span class="button-icon align-icon-right">
+                        <i aria-hidden="true" class="fas fa-arrow-right"></i> </span>
+                        <span class="button-text">Read Story</span>
+                    </span>
+                    </a>
+                </div>
+                </div>
+            </div>
+                `;
+
+            $.ajax({
+                url: 'https://www.settlein.support/api/v2/help_center/en-us/articles',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    let articlesContainer = $('#articles');
+                    data['articles'].forEach(element => {
+                        // console.log(element['url'] + " " + element['title']);
+                        articlesContainer.append(element.map(article).join(''));
+                    });
+                },
+                error: function(request, error) {
+                    console.log("Request: " + JSON.stringify(request));
+                }
+            });
+        },
         getMenu: function() {
             let lang = $('html').attr('lang');
             // $.ajax({
