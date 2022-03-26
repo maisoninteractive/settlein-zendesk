@@ -947,7 +947,7 @@ input[type="submit"][disabled] {
 .nav-wrapper-desktop a:active {
     background-color: transparent;
     color: $link_color;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 @media (min-width: 1024px) {
@@ -5318,6 +5318,8 @@ html[dir="rtl"] .notification-left-aligned {
 
 /**** Support Topics ****/
 
+
+/* 
 .flex-row {
     display: -ms-flexbox;
     display: flex;
@@ -5351,7 +5353,7 @@ html[dir="rtl"] .notification-left-aligned {
     .flex-center-spaced-15-80 {
         margin-right: 80px;
     }
-}
+} */
 
 h3.section-title {
     font-weight: 700;
