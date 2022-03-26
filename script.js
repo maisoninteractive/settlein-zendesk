@@ -417,6 +417,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // popup image
             self.getMenu();
 
+            //Append Articles
+            self.getArticles();
+
 
         },
         /**
