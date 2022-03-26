@@ -414,11 +414,14 @@ document.addEventListener('DOMContentLoaded', function() {
         init: function() {
             var self = this;
 
+
             // popup image
             self.getMenu();
 
             //Append Articles
-            self.getArticles();
+            if (0 < $('#articles').length) {
+                self.getArticles();
+            }
 
 
         },
@@ -427,6 +430,24 @@ document.addEventListener('DOMContentLoaded', function() {
          */
 
         getArticles: function() {
+            var self = this;
+            $.ajax({
+                url: 'https://www.settlein.support/api/v2/help_center/en-us/articles',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    self.showArticles(data);
+                },
+                error: function(request, error) {
+                    console.log("Request: " + JSON.stringify(request));
+                }
+            });
+        },
+        getArticlesBySectionId: function() {
+            // let search_string = $()
+            // getArticles('https://www.settlein.support/api/v2/help_center/en-us/sections/4926790142615/articles')
+        },
+        showArticles: function(data) {
 
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
@@ -450,43 +471,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
                 `;
+            let articlesContainer = $('#articles');
+            let getImage = [];
+            data['articles'].forEach(element => {
+                // console.log(element['url'] + " " + element['title']);
+                let excerpt = $(element['body']).text().trim().substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
+                articlesContainer.append([{
+                    html_url: element['html_url'],
+                    id: element['id'],
+                    title: element['title'],
+                    body: excerpt
+                }, ].map(article).join(''));
 
+                getImage[element['id']] = $.ajax({
+                    url: 'https://www.settlein.support/hc/api/v2/articles/' + element['id'] + '/attachments.json',
+                    type: 'GET',
+                    dataType: 'json'
+                });
+                $.when(getImage[element['id']]).done(function(imageUrl) {
+                    $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
+                });
 
-            $.ajax({
-                url: 'https://www.settlein.support/api/v2/help_center/en-us/articles',
-                type: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    let articlesContainer = $('#articles');
-                    let getImage = [];
-                    data['articles'].forEach(element => {
-                        // console.log(element['url'] + " " + element['title']);
-                        let excerpt = $(element['body']).text().trim().substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
-                        articlesContainer.append([{
-                            html_url: element['html_url'],
-                            id: element['id'],
-                            title: element['title'],
-                            body: excerpt
-                        }, ].map(article).join(''));
-
-                        getImage[element['id']] = $.ajax({
-                            url: 'https://www.settlein.support/hc/api/v2/articles/' + element['id'] + '/attachments.json',
-                            type: 'GET',
-                            dataType: 'json'
-                        });
-                        $.when(getImage[element['id']]).done(function(imageUrl) {
-                            $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
-                        });
-
-                    });
-                },
-                error: function(request, error) {
-                    console.log("Request: " + JSON.stringify(request));
-                }
             });
+
         },
         getMenu: function() {
             let lang = $('html').attr('lang');
+
+            $.ajax({
+                url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
+                type: 'GET',
+                data: {
+                    'lang': lang
+                },
+                dataType: 'json',
+                cache: true
+            }).done(function(response) {
+                // The response is available here.
+                let $content = '';
+                response.forEach(element => {
+                    $content += '<li class=""><a href="' + element['url'] + '" class="" >' + element['title'] + "</a></li>";
+                });
+                $('#user-nav ul.user-nav-list').html($content);
+                $('#user-nav-mobile ul.menu-list-mobile-items').html($content);
+            });
+
             // $.ajax({
             //     url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
             //     type: 'GET',
@@ -507,74 +536,6 @@ document.addEventListener('DOMContentLoaded', function() {
             //         console.log("Request: " + JSON.stringify(request));
             //     }
             // });
-            var localCache = {
-                /**
-                 * timeout for cache in millis
-                 * @type {number}
-                 */
-                timeout: 30000000,
-                /** 
-                 * @type {{_: number, data: {}}}
-                 **/
-                data: {},
-                remove: function(url) {
-                    delete localCache.data[url];
-                },
-                exist: function(url) {
-                    return !!localCache.data[url] && ((new Date().getTime() - localCache.data[url]._) < localCache.timeout);
-                },
-                get: function(url) {
-                    console.log('Getting in cache for url' + url);
-                    return localCache.data[url].data;
-                },
-                set: function(url, cachedData, callback) {
-                    localCache.remove(url);
-                    localCache.data[url] = {
-                        _: new Date().getTime(),
-                        data: cachedData
-                    };
-                    if ($.isFunction(callback)) callback(cachedData);
-                }
-            };
-
-            $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-                if (options.cache) {
-                    var complete = originalOptions.complete || $.noop,
-                        url = originalOptions.url;
-                    //remove jQuery cache as we have our own localCache
-                    options.cache = false;
-                    options.beforeSend = function() {
-                        if (localCache.exist(url)) {
-                            complete(localCache.get(url));
-                            return false;
-                        }
-                        return true;
-                    };
-                    options.complete = function(data, textStatus) {
-                        localCache.set(url, data, complete);
-                    };
-                }
-            });
-
-
-            $.ajax({
-                url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
-                type: 'GET',
-                data: {
-                    'lang': lang
-                },
-                dataType: 'json',
-                cache: true
-            }).done(function(response) {
-                // The response is available here.
-                let $content = '';
-                response.forEach(element => {
-                    $content += '<li class=""><a href="' + element['url'] + '" class="" >' + element['title'] + "</a></li>";
-                });
-                $('#user-nav ul.user-nav-list').html($content);
-                $('#user-nav-mobile ul.menu-list-mobile-items').html($content);
-            });
-
 
         },
 
@@ -589,6 +550,55 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize script
         new CoreThemeCore();
 
+    });
+
+    var localCache = {
+        /**
+         * timeout for cache in millis
+         * @type {number}
+         */
+        timeout: 30000000,
+        /** 
+         * @type {{_: number, data: {}}}
+         **/
+        data: {},
+        remove: function(url) {
+            delete localCache.data[url];
+        },
+        exist: function(url) {
+            return !!localCache.data[url] && ((new Date().getTime() - localCache.data[url]._) < localCache.timeout);
+        },
+        get: function(url) {
+            console.log('Getting in cache for url' + url);
+            return localCache.data[url].data;
+        },
+        set: function(url, cachedData, callback) {
+            localCache.remove(url);
+            localCache.data[url] = {
+                _: new Date().getTime(),
+                data: cachedData
+            };
+            if ($.isFunction(callback)) callback(cachedData);
+        }
+    };
+
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+        if (options.cache) {
+            var complete = originalOptions.complete || $.noop,
+                url = originalOptions.url;
+            //remove jQuery cache as we have our own localCache
+            options.cache = false;
+            options.beforeSend = function() {
+                if (localCache.exist(url)) {
+                    complete(localCache.get(url));
+                    return false;
+                }
+                return true;
+            };
+            options.complete = function(data, textStatus) {
+                localCache.set(url, data, complete);
+            };
+        }
     });
 
 })(jQuery);
