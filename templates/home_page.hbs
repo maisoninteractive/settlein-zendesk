@@ -30,19 +30,18 @@
         {{#each (slice sections 0 6) }}
 
         <div class="col-lg-6">
-          <div class="item-img-left">
-            <div class="item_img">
+          <div class="item-img-left row middle-xs">
+            <div class="item_img col-xs-2">
               <div class="img_wrap">
                 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90">
-                  <rect x="2" y="2" width="90" height="90" style="fill:#DEDEDE;" /><text x="50%" y="50%" font-size="18"
-                    text-anchor="middle" alignment-baseline="middle" font-family="monospace, sans-serif"
+                  <rect x="1" y="1" style="fill:#DEDEDE;width: 100%;height: 100%;"></rect><text x="50%" y="50%"
+                    font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="monospace, sans-serif"
                     fill="#555555">90x90</text>
                 </svg>
-
               </div>
               <div class="item-img-caption">{{name}}</div>
             </div>
-            <div class="item-text">
+            <div class="item-text col-xs-10">
               <h4><a href="{{url}}">{{description}}</a></h4>
             </div>
           </div>
