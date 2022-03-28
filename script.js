@@ -431,8 +431,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         getArticles: function() {
             var self = this;
+            let lang = self.getLanguage($('html').attr('lang'));
+
             $.ajax({
-                url: 'https://www.settlein.support/api/v2/help_center/en-us/articles',
+                url: 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles?page[size]=4',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
@@ -444,11 +446,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         },
         getArticlesBySectionId: function() {
-            // let search_string = $()
+            // let search_string = $()topics-dropdown
             // getArticles('https://www.settlein.support/api/v2/help_center/en-us/sections/4926790142615/articles')
+        },
+        getLanguage: function(lang) {
+            if (lang == "sw") {
+                lang = "sw-ke";
+            }
+            return lang;
         },
         showArticles: function(data) {
             var self = this;
+            let lang = self.getLanguage($('html').attr('lang'));
+
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
                 <div id="article-wrap-${id}" class="article-img-left">
@@ -462,9 +472,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <a href="${html_url}" class="read-story-button" role="button">
                     <span class="button-content-wrapper">
+                    <span class="button-text">Read Story</span>
                         <span class="button-icon align-icon-right">
-                        <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
-                        <span class="button-text">Read Story</span>
+                        <i aria-hidden="true" class="fa fa-long-arrow-right"></i> </span>
+                       
                     </span>
                     </a>
                 </div>
@@ -484,7 +495,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, ].map(article).join(''));
 
                 getImage[element['id']] = $.ajax({
-                    url: 'https://www.settlein.support/hc/api/v2/articles/' + element['id'] + '/attachments.json',
+                    // url: 'https://www.settlein.support/hc/api/v2/articles/' + element['id'] + '/attachments.json',
+                    url: 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles/' + element['id'] + '/attachments.json',
                     type: 'GET',
                     dataType: 'json'
                 });
