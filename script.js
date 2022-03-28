@@ -448,12 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // let search_string = $()topics-dropdown
             // getArticles('https://www.settlein.support/api/v2/help_center/en-us/sections/4926790142615/articles')
         },
-        getMenuLanguageCornav: function(lang) {
-            if (lang == "sw") {
-                lang = "sw-ke";
-            }
-            return lang;
-        },
+
         showArticles: function(data, lang) {
             var self = this;
             const article = ({ html_url, id, title, body }) => `
@@ -522,7 +517,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return true;
             }
         },
+        getMenuLanguageCornav: function(lang) {
+            if (lang == "sw") {
+                lang = "sw-ke";
+            }
+            return lang;
+        },
         getMenu: function() {
+            var self = this;
             let lang = self.getMenuLanguageCornav($('html').attr('lang'));
 
             $.ajax({
