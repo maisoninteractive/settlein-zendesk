@@ -431,14 +431,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         getArticles: function() {
             var self = this;
-            let lang = self.getLanguage($('html').attr('lang'));
-
+            let lang = $('html').attr('lang');
             $.ajax({
                 url: 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles?page[size]=4',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    self.showArticles(data);
+                    self.showArticles(data, lang);
                 },
                 error: function(request, error) {
                     console.log("Request: " + JSON.stringify(request));
@@ -449,16 +448,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // let search_string = $()topics-dropdown
             // getArticles('https://www.settlein.support/api/v2/help_center/en-us/sections/4926790142615/articles')
         },
-        getLanguage: function(lang) {
+        getMenuLanguageCornav: function(lang) {
             if (lang == "sw") {
                 lang = "sw-ke";
             }
             return lang;
         },
-        showArticles: function(data) {
+        showArticles: function(data, lang) {
             var self = this;
-            let lang = self.getLanguage($('html').attr('lang'));
-
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
                 <div id="article-wrap-${id}" class="article-img-left">
@@ -526,7 +523,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         getMenu: function() {
-            let lang = $('html').attr('lang');
+            let lang = self.getMenuLanguageCornav($('html').attr('lang'));
 
             $.ajax({
                 url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
