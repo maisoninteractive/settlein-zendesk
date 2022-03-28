@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         getArticles: function() {
             var self = this;
-            let lang = $('html').attr('lang');
+            let lang = toLowerCase($('html').attr('lang'));
             $.ajax({
                 url: 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles?page[size]=4',
                 type: 'GET',
@@ -518,10 +518,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         getMenuLanguageCornav: function(lang) {
-            if (lang == "sw") {
-                lang = "sw-ke";
+            let language = toLowerCase(lang);
+            if (language == "sw") {
+                language = "sw-ke";
             }
-            return lang;
+            return language;
         },
         getMenu: function() {
             var self = this;
