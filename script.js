@@ -505,10 +505,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             let articlesContainer = $('#articles');
             let getImage = [];
+            articlesContainer.html('');
             data['articles'].forEach(element => {
                 // console.log(element['url'] + " " + element['title']);
                 let excerpt = $(element['body']).text().trim().substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
-                articlesContainer.html([{
+                articlesContainer.append([{
                     html_url: element['html_url'],
                     id: element['id'],
                     title: element['title'],
