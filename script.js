@@ -540,13 +540,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             let prev = "#"
-            if ((data['previous_page'] - 1) != 0) { prev = (data['page'] - 1); };
+            if ((data['previous_page'] - 1) > 0) {
+                prev = '?page=' + (data['page'] - 1) + '&per_page=4';
+            };
             let next = "#"
-            if ((data['next_page'] + 1) < data['page_count']) { next = (data['page'] + 1); };
+            if ((data['next_page'] + 1) < data['page_count']) {
+                next = '?page=' + (data['page'] + 1) + '&per_page=4';
+            };
 
             let active = '';
 
-            let pagination = `<div data-query="?page=${prev}&per_page=4" class="pagination:number arrow">
+            let pagination = `<div data-query="${prev}" class="pagination:number arrow">
             <svg width="18" height="18">
               <use xlink:href="#left" />
             </svg>
@@ -580,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     i = count + 1;
                 }
             }
-            pagination += `<div data-query="?page=${next}&per_page=4" class="pagination:number arrow">
+            pagination += `<div data-query="${next}" class="pagination:number arrow">
             <svg width="18" height="18">
               <use xlink:href="#right" />
             </svg>
