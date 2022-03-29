@@ -5678,7 +5678,7 @@ ul.tabs li.active {
     background-color: #3B70E3;
     border-radius: 22px 22px 22px 22px;
     line-height: 21px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 12px 12px 15px;
     width: auto;
     box-shadow: none;
     text-decoration: none;
@@ -5701,10 +5701,10 @@ ul.tabs li.active {
 }
 
 .align-icon-right {
-    margin-left: 13px;
+    margin-left: 5px;
     -webkit-box-ordinal-group: 16;
     -ms-flex-order: 15;
-    order: 15;
+    order: 5;
 }
 
 .button-icon {
@@ -5722,12 +5722,12 @@ ul.tabs li.active {
     flex-grow: 1;
     -webkit-box-ordinal-group: 11;
     -ms-flex-order: 10;
-    order: 10;
+    order: 2;
     display: inline-block;
 }
 
 
-/* Placeholders */
+/**** Placeholders ****/
 
 .search-full input[type="search"]::-webkit-input-placeholder,
 .search-full input[type="search"]::-moz-placeholder,
@@ -5737,6 +5737,58 @@ ul.tabs li.active {
     color: #000000 !important;
     font-size: 16px;
     font-weight: 600;
+}
+
+
+/**** Pagination ****/
+
+.hide {
+    display: none;
+    visibility: hidden;
+    height: 0;
+}
+
+.pagination\:container {
+    display: flex;
+    align-items: center;
+}
+
+.arrow\:text {
+    display: block;
+    vertical-align: middle;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.pagination\:number {
+    --size: 32px;
+    --margin: 6px;
+    margin: 0 var(--margin);
+    border-radius: 6px;
+    background: #202020;
+    max-width: auto;
+    min-width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 6px;
+}
+
+@media (hover: hover) {
+    .pagination\:number:hover {
+        background: #282828;
+    }
+}
+
+.pagination\:number:active {
+    background: #282828;
+}
+
+.pagination\:active {
+    background: #282828;
+    position: relative;
 }
 
 

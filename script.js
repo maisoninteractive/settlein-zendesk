@@ -432,12 +432,13 @@ document.addEventListener('DOMContentLoaded', function() {
         getArticles: function() {
             var self = this;
             let lang = $('html').attr('lang').toLowerCase();
+            let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles';
             $.ajax({
-                url: 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles?page[size]=4',
+                url: articlesUrl + '?page=1&per_page=4',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    self.showArticles(data, lang);
+                    self.showArticles(data, lang, articlesUrl);
                 },
                 error: function(request, error) {
                     console.log("Request: " + JSON.stringify(request));
@@ -449,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // getArticles('https://www.settlein.support/api/v2/help_center/en-us/sections/4926790142615/articles')
         },
 
-        showArticles: function(data, lang) {
+        showArticles: function(data, lang, articlesUrl) {
             var self = this;
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
@@ -508,6 +509,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
             });
+
+            let prev = "#"
+            if (data['previous_page'] != null) { prev = data['previous_page']; };
+            let next = "#"
+            if (data['next_page'] != null) { prev = data['next_page']; };
+
+            let pagination = `<div data-href="${prev}" class="pagination:number arrow">
+            <svg width="18" height="18">
+              <use xlink:href="#left" />
+            </svg>
+            <span class="arrow:text">Previous</span>
+          </div>`;
+
+            let count = data['page_count'];
+            for (let i = 1; i < (count + 1); i++) {
+                pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number">
+                ${i}
+                </div>`;
+            }
+            pagination += `<div data-href="${next}" class="pagination:number arrow">
+            <svg width="18" height="18">
+              <use xlink:href="#right" />
+            </svg>
+          </div>`;
+
+            $('#pagination').html(pagination);
 
         },
         checkURL: function(url) {
