@@ -514,6 +514,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data['previous_page'] != null) { prev = data['previous_page']; };
             let next = "#"
             if (data['next_page'] != null) { prev = data['next_page']; };
+            let active = '';
 
             let pagination = `<div data-href="${prev}" class="pagination:number arrow">
             <svg width="18" height="18">
@@ -524,7 +525,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let count = data['page_count'];
             for (let i = 1; i < (count + 1); i++) {
-                pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number">
+
+                if (data['page'] == i) { active = 'pagination:active'; }
+
+                pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number ${active}">
                 ${i}
                 </div>`;
             }

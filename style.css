@@ -5453,8 +5453,10 @@ h3.section-title {
     color: #FFFFFF;
 }
 
-.item-text h4 a:hover,
-.item-text a:hover {
+
+/* .item-text a:hover  */
+
+.item-text h4 a:hover {
     color: #5dd191;
 }
 
@@ -5751,6 +5753,8 @@ ul.tabs li.active {
 .pagination\:container {
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
 }
 
 .arrow\:text {
@@ -5765,7 +5769,7 @@ ul.tabs li.active {
     --margin: 6px;
     margin: 0 var(--margin);
     border-radius: 6px;
-    background: #202020;
+    background: #3B70E3;
     max-width: auto;
     min-width: var(--size);
     height: var(--size);
@@ -5776,18 +5780,16 @@ ul.tabs li.active {
     padding: 0 6px;
 }
 
-@media (hover: hover) {
-    .pagination\:number:hover {
-        background: #282828;
-    }
+.pagination\:number:hover {
+    background: #000000;
 }
 
 .pagination\:number:active {
-    background: #282828;
+    background: #000000;
 }
 
 .pagination\:active {
-    background: #282828;
+    background: #000000;
     position: relative;
 }
 
