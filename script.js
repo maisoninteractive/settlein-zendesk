@@ -422,35 +422,59 @@ document.addEventListener('DOMContentLoaded', function() {
             if (0 < $('#articles').length) {
                 self.getArticles();
             }
-
+            //Set CLick event for Paginations
+            self.getPageArticles();
 
         },
         /**
          *  Extensions: Load scripts
          */
 
+        getPageArticles: function() {
+            var self = this;
+            //jQuery('').data('href')
+
+            $('#pagination').on("click", 'div[class*="pagination:number"]', function() {
+                let lang = $('html').attr('lang').toLowerCase();
+                let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles' + $(this).data('query');
+                $.ajax({
+                    url: articlesUrl,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        self.showArticles(data, lang);
+                    },
+                    error: function(request, error) {
+                        console.log("Request: " + JSON.stringify(request));
+                    }
+                });
+
+            });
+
+        },
         getArticles: function() {
             var self = this;
             let lang = $('html').attr('lang').toLowerCase();
-            let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles';
+            let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles?page=1&per_page=4';
             $.ajax({
-                url: articlesUrl + '?page=1&per_page=4',
+                url: articlesUrl,
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    self.showArticles(data, lang, articlesUrl);
+                    self.showArticles(data, lang);
                 },
                 error: function(request, error) {
                     console.log("Request: " + JSON.stringify(request));
                 }
             });
         },
+
         getArticlesBySectionId: function() {
             // let search_string = $()topics-dropdown
             // getArticles('https://www.settlein.support/api/v2/help_center/en-us/sections/4926790142615/articles')
         },
 
-        showArticles: function(data, lang, articlesUrl) {
+        showArticles: function(data, lang) {
             var self = this;
             const article = ({ html_url, id, title, body }) => `
                 <div class="col-lg-6 margin-bottom-20">
@@ -534,17 +558,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             for (i; i < (count + 1); i++) {
                 if (data['page'] == i) {
-                    pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number pagination:active">
+                    pagination += `<div data-query="?page=${i}&per_page=4" class="pagination:number pagination:active">
                     ${i}
                     </div>`;
                 } else {
-                    pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number">
+                    pagination += `<div data-query="?page=${i}&per_page=4" class="pagination:number">
                     ${i}
                     </div>`;
                 }
 
                 if (skip && i == 11) {
-                    pagination += `<span>...</span><div data-href="${articlesUrl}?page=${count}&per_page=4" class="pagination:number">
+                    pagination += `<span>...</span><div data-query="?page=${count}&per_page=4" class="pagination:number">
                     ${i}
                     </div>`;
                     i = count + 1;
