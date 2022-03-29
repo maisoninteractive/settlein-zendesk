@@ -434,20 +434,24 @@ document.addEventListener('DOMContentLoaded', function() {
             var self = this;
             //jQuery('').data('href')
 
-            $('#pagination').on("click", 'div[class*="pagination:number"]', function() {
+            $('#pagination').on("click", 'div[class*="pagination:number"]', function(e) {
+                e.preventDefault();
+
                 let lang = $('html').attr('lang').toLowerCase();
-                let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles' + $(this).data('query');
-                $.ajax({
-                    url: articlesUrl,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        self.showArticles(data, lang);
-                    },
-                    error: function(request, error) {
-                        console.log("Request: " + JSON.stringify(request));
-                    }
-                });
+                if ($(this).data('query') != "#") {
+                    let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles' + $(this).data('query');
+                    $.ajax({
+                        url: articlesUrl,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            self.showArticles(data, lang);
+                        },
+                        error: function(request, error) {
+                            console.log("Request: " + JSON.stringify(request));
+                        }
+                    });
+                }
 
             });
 
@@ -504,7 +508,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data['articles'].forEach(element => {
                 // console.log(element['url'] + " " + element['title']);
                 let excerpt = $(element['body']).text().trim().substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
-                articlesContainer.append([{
+                articlesContainer.html([{
                     html_url: element['html_url'],
                     id: element['id'],
                     title: element['title'],
@@ -540,7 +544,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data['next_page'] != null) { prev = data['next_page']; };
             let active = '';
 
-            let pagination = `<div data-href="${prev}" class="pagination:number arrow">
+            let pagination = `<div data-query="${prev}" class="pagination:number arrow">
             <svg width="18" height="18">
               <use xlink:href="#left" />
             </svg>
