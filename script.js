@@ -524,13 +524,31 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>`;
 
             let count = data['page_count'];
-            for (let i = 1; i < (count + 1); i++) {
+            let skip = false;
+            let i = 1;
+            if (count > 10) {
+                skip = true;
+                if (data['page'] > 10) {
+                    i = data['page'] - 5;
+                }
+            }
+            for (i; i < (count + 1); i++) {
+                if (data['page'] == i) {
+                    pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number pagination:active">
+                    ${i}
+                    </div>`;
+                } else {
+                    pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number">
+                    ${i}
+                    </div>`;
+                }
 
-                if (data['page'] == i) { active = 'pagination:active'; }
-
-                pagination += `<div data-href="${articlesUrl}?page=${i}&per_page=4" class="pagination:number ${active}">
-                ${i}
-                </div>`;
+                if (skip && i == 11) {
+                    pagination += `<span>...</span><div data-href="${articlesUrl}?page=${count}&per_page=4" class="pagination:number">
+                    ${i}
+                    </div>`;
+                    i = count + 1;
+                }
             }
             pagination += `<div data-href="${next}" class="pagination:number arrow">
             <svg width="18" height="18">
