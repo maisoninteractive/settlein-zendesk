@@ -544,7 +544,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 prev = '?page=' + (data['page'] - 1) + '&per_page=4';
             };
             let next = "#"
-            if ((data['next_page'] != null) && (data['page'] + 1) < data['page_count']) {
+            if ((data['next_page'] != null) && data['page'] < data['page_count']) {
                 next = '?page=' + (data['page'] + 1) + '&per_page=4';
             };
 
