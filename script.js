@@ -496,7 +496,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="button-text">Read Story</span>
                         <span class="button-icon align-icon-right">
                         <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
-                       
                     </span>
                     </a>
                 </div>
@@ -554,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <svg width="18" height="18">
               <use xlink:href="#left" />
             </svg>
-            <span class="arrow:text">Previous</span>
+            <span class="arrow:text">{{dc 'settlein_previous_button_label'}}</span>
           </div>`;
 
             let count = data['page_count'];
