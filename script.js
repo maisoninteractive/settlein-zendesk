@@ -495,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="button-content-wrapper">
                     <span class="button-text">Read Story</span>
                         <span class="button-icon align-icon-right">
-                        <i aria-hidden="true" class="fa fa-long-arrow-right"></i> </span>
+                        <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
                        
                     </span>
                     </a>
@@ -612,7 +612,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let lang = self.getMenuLanguageCornav($('html').attr('lang'));
 
             $.ajax({
-                url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
+                url: 'https://settleinus.org/wp-json/wp/v2/menu',
                 type: 'GET',
                 data: {
                     'lang': lang
@@ -630,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // $.ajax({
-            //     url: 'https://corenav-linux-staging.azurewebsites.net/wp-json/wp/v2/menu',
+            //     url: 'https://settleinus.org/wp-json/wp/v2/menu',
             //     type: 'GET',
             //     data: {
             //         'lang': lang.substring(0, 2)
