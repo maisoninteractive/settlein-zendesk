@@ -548,12 +548,12 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             let active = '';
-
+            let prevlabel = $('#prevlabel').html();
             let pagination = `<div data-query="${prev}" class="pagination:number arrow">
             <svg width="18" height="18">
               <use xlink:href="#left" />
             </svg>
-            <span class="arrow:text">{{dc 'settlein_previous_button_label'}}</span>
+            <span class="arrow:text">${prevlabel}</span>
           </div>`;
 
             let count = data['page_count'];
