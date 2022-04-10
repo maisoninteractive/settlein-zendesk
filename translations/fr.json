@@ -22,6 +22,8 @@
     "logo_label": "Logo",
     "negative_logo_label": "Negative Logo",
     "negative_logo_description": "Company Negative Logo",
+    "preloader_image_label": "Preloader Gif",
+    "preloader_image_description": "Page Loading Gif",
     "hero_image_label": "Hero Image",
     "favicon_description": "Icône affichée dans la barre d’adresse de votre navigateur",
     "favicon_label": "Favicon",

@@ -1,7 +1,7 @@
 {
     "name": "SettleIn",
     "author": "Zendesk",
-    "version": "2.14.44",
+    "version": "2.14.45",
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [{
@@ -262,6 +262,12 @@
                     "type": "file",
                     "description": "community_image_description",
                     "label": "community_image_label"
+                },
+                {
+                    "identifier": "preloader_image",
+                    "type": "file",
+                    "description": "preloader_image_description",
+                    "label": "preloader_image_label"
                 }
             ]
         },

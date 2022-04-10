@@ -312,6 +312,19 @@ textarea:focus {
 }
 
 
+/* Preloader */
+
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url($preloader_image) center no-repeat #fff;
+}
+
+
 /* @media (min-width: 1160px) {
     .container {
         padding: 0;

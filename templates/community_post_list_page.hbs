@@ -1,230 +1,161 @@
-<section class="section hero">
-  <header class="header">
-    <div class="logo">
-      {{#link 'help_center'}}
-      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
-      {{#if settings.show_brand_name}}
-      <span aria-hidden="true">{{help_center.name}}</span>
-      {{/if}}
-      {{/link}}
-    </div>
-    <div class="nav-wrapper-desktop">
-      <nav class="user-nav" id="user-nav">
-        <ul class="user-nav-list">
-          <li><a href="https://settleinus.org/about-core/">About CORE</i></a></li>
-          <li><a href="https://settleinus.org/life-in-the-u-s/">Life in the U.S</a></li>
-          <li><a href="https://settleinus.org/about-refugee-resettlement/">About Refugee
-              Resettlement</a></li>
-          <li class="active"><a href="https://settleinus.org/help-center/">Help Center</a></li>
-          <li><a href="https://settleinus.org/multilingual-resource-library/">Multilingual
-              Resource Library</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div id="language-selector-wrapper" class="header-language-selector">
-      {{#if alternative_locales}}
-      <div class="dropdown language-selector">
-        <button class="dropdown-toggle" aria-haspopup="true">
-          {{current_locale.name}}
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
-            class="dropdown-chevron-icon">
-            <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
-          </svg>
-        </button>
-        <span class="dropdown-menu dropdown-menu-end" role="menu">
-          {{#each alternative_locales}}
-          <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-            {{name}}
-          </a>
-          {{/each}}
-        </span>
-      </div>
-      {{/if}}
-    </div>
+<h1 class="visibility-hidden">{{ t 'community'}}</h1>
 
-    <div class="nav-wrapper-mobile">
-      <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false"
-        aria-label="{{t 'toggle_navigation'}}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
-          class="icon-menu">
-          <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
+<section class="section hero community-hero">
+  <h2 class="visibility-hidden">{{ t 'search'}}</h2>
+  <div class="hero-inner">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+      class="search-icon" aria-hidden="true">
+      <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
+      <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
+    </svg>
+    {{search submit=false class='search search-full' scoped=settings.scoped_community_search}}
+  </div>
+</section>
+
+<div class="container">
+  <nav class="sub-nav">
+    {{breadcrumbs}}
+  </nav>
+
+  <header class="page-header community-header">
+    <span class="dropdown">
+      <button class="dropdown-toggle" aria-haspopup="true">
+        <h2 class="title">
+          {{t 'all_posts'}}
+        </h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+          class="dropdown-chevron-icon">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
         </svg>
       </button>
-
-      <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
-        <ul class="menu-list-mobile-items">
-          <li><a href="https://settleinus.org/about-core/">About CORE</i></a></li>
-          <li><a href="https://settleinus.org/life-in-the-u-s/">Life in the U.S</a></li>
-          <li><a href="https://settleinus.org/about-refugee-resettlement/">About Refugee
-              Resettlement</a></li>
-          <li><a href="https://settleinus.org/help-center/">Help Center</a></li>
-          <li><a href="https://settleinus.org/multilingual-resource-library/">Multilingual
-              Resource Library</a></li>
-        </ul>
-
-      </nav>
-
-    </div>
-
+      <span class="dropdown-menu" role="menu">
+        {{#link 'topics' role='menuitem'}}
+        {{t 'show_topics'}}
+        {{/link}}
+        {{#link 'posts' role='menuitem' selected='true'}}
+        {{t 'show_all_posts'}}
+        {{/link}}
+      </span>
+    </span>
+    <span class="post-to-community">
+      {{link 'new_post' class='button button-large'}}
+    </span>
   </header>
-  <h1 class="visibility-hidden">{{ t 'community'}}</h1>
 
-  <section class="section hero community-hero">
-    <h2 class="visibility-hidden">{{ t 'search'}}</h2>
-    <div class="hero-inner">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
-        class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
-      </svg>
-      {{search submit=false class='search search-full' scoped=settings.scoped_community_search}}
-    </div>
-  </section>
-
-  <div class="container">
-    <nav class="sub-nav">
-      {{breadcrumbs}}
-    </nav>
-
-    <header class="page-header community-header">
+  <div class="topic-header">
+    <span class="topic-filters">
       <span class="dropdown">
         <button class="dropdown-toggle" aria-haspopup="true">
-          <h2 class="title">
-            {{t 'all_posts'}}
-          </h2>
+          {{current_filter.label}}
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
             class="dropdown-chevron-icon">
             <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
           </svg>
         </button>
         <span class="dropdown-menu" role="menu">
-          {{#link 'topics' role='menuitem'}}
-          {{t 'show_topics'}}
-          {{/link}}
-          {{#link 'posts' role='menuitem' selected='true'}}
-          {{t 'show_all_posts'}}
-          {{/link}}
-        </span>
-      </span>
-      <span class="post-to-community">
-        {{link 'new_post' class='button button-large'}}
-      </span>
-    </header>
-
-    <div class="topic-header">
-      <span class="topic-filters">
-        <span class="dropdown">
-          <button class="dropdown-toggle" aria-haspopup="true">
-            {{current_filter.label}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
-              class="dropdown-chevron-icon">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
-            </svg>
-          </button>
-          <span class="dropdown-menu" role="menu">
-            {{#each filters}}
-            <a href="{{url}}" aria-selected="{{selected}}" role="menuitem">
-              {{name}}
-            </a>
-            {{/each}}
-          </span>
-        </span>
-        <span class="dropdown">
-          <button class="dropdown-toggle" aria-haspopup="true">
-            {{current_sorter.label}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
-              class="dropdown-chevron-icon">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
-            </svg>
-          </button>
-          <span class="dropdown-menu" role="menu">
-            {{#each sorters}}
-            <a href="{{url}}" aria-selected="{{selected}}" role="menuitem">
-              {{name}}
-            </a>
-            {{/each}}
-          </span>
-        </span>
-      </span>
-    </div>
-
-    <div id="main-content" class="posts-list striped-list">
-      {{#unless posts}}
-      <div class="no-posts-with-filter">
-        {{t 'no_posts_with_filter'}}
-      </div>
-      {{/unless}}
-      {{#each posts}}
-      <section role="region" aria-labelledby="title-{{id}}">
-        <div class="striped-list-item {{#if featured}}post-featured{{/if}}">
-          <span class="striped-list-info">
-            <a href="{{url}}" id="title-{{id}}" class="striped-list-title">{{title}}</a>
-            <span class="post-overview-item">
-              {{#if pinned}}
-              <span class="status-label status-label-pinned">{{t 'pinned'}}</span>
-              {{/if}}
-
-              {{#if featured}}
-              <span class="status-label status-label-featured">{{t 'featured'}}</span>
-              {{/if}}
-
-              {{#is status 'none'}}
-              {{else}}
-              <span class="status-label-{{status_dasherized}} status-label striped-list-status">{{status_name}}</span>
-              {{/is}}
-            </span>
-
-            <ul class="meta-group">
-              <li class="meta-data">{{author.name}}</li>
-              {{#if editor}}
-              <li class="meta-data">{{date edited_at timeago=true}}</li>
-              <li class="meta-data">{{t 'edited'}}</li>
-              {{else}}
-              <li class="meta-data">{{date created_at timeago=true}}</li>
-              {{/if}}
-            </ul>
-          </span>
-
-          <div class="post-overview-count striped-list-count">
-            <span class="striped-list-count-item">
-              <span class="striped-list-number">{{vote_sum}}</span>
-              {{t 'vote' count=vote_sum}}
-            </span>
-            <span class="striped-list-count-item">
-              <span class="striped-list-number">{{comment_count}}</span>
-              {{t 'comment' count=comment_count}}
-            </span>
-          </div>
-        </div>
-      </section>
-      {{/each}}
-    </div>
-
-    {{pagination}}
-
-    {{#if featured_posts}}
-    <section class="section community-featured-posts">
-      <h2 class="title">{{t 'featured_posts'}}</h2>
-      <ul class="promoted-articles">
-        {{#each featured_posts}}
-        <li class="promoted-articles-item">
-          <a href="{{url}}">
-            {{title}}
+          {{#each filters}}
+          <a href="{{url}}" aria-selected="{{selected}}" role="menuitem">
+            {{name}}
           </a>
-        </li>
-        {{/each}}
-      </ul>
-    </section>
-    {{/if}}
-
-    <section class="community-activity activity">
-      {{#if help_center.community_enabled}}
-      {{recent_activity scope='community'}}
-      {{/if}}
-    </section>
-
-    <section class="container community-footer">
-      <h2 class="community-footer-title">{{t 'suggest_new_post'}}</h2>
-      {{link 'new_post' class='button button-large'}}
-    </section>
+          {{/each}}
+        </span>
+      </span>
+      <span class="dropdown">
+        <button class="dropdown-toggle" aria-haspopup="true">
+          {{current_sorter.label}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+            class="dropdown-chevron-icon">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
+          </svg>
+        </button>
+        <span class="dropdown-menu" role="menu">
+          {{#each sorters}}
+          <a href="{{url}}" aria-selected="{{selected}}" role="menuitem">
+            {{name}}
+          </a>
+          {{/each}}
+        </span>
+      </span>
+    </span>
   </div>
+
+  <div id="main-content" class="posts-list striped-list">
+    {{#unless posts}}
+    <div class="no-posts-with-filter">
+      {{t 'no_posts_with_filter'}}
+    </div>
+    {{/unless}}
+    {{#each posts}}
+    <section role="region" aria-labelledby="title-{{id}}">
+      <div class="striped-list-item {{#if featured}}post-featured{{/if}}">
+        <span class="striped-list-info">
+          <a href="{{url}}" id="title-{{id}}" class="striped-list-title">{{title}}</a>
+          <span class="post-overview-item">
+            {{#if pinned}}
+            <span class="status-label status-label-pinned">{{t 'pinned'}}</span>
+            {{/if}}
+
+            {{#if featured}}
+            <span class="status-label status-label-featured">{{t 'featured'}}</span>
+            {{/if}}
+
+            {{#is status 'none'}}
+            {{else}}
+            <span class="status-label-{{status_dasherized}} status-label striped-list-status">{{status_name}}</span>
+            {{/is}}
+          </span>
+
+          <ul class="meta-group">
+            <li class="meta-data">{{author.name}}</li>
+            {{#if editor}}
+            <li class="meta-data">{{date edited_at timeago=true}}</li>
+            <li class="meta-data">{{t 'edited'}}</li>
+            {{else}}
+            <li class="meta-data">{{date created_at timeago=true}}</li>
+            {{/if}}
+          </ul>
+        </span>
+
+        <div class="post-overview-count striped-list-count">
+          <span class="striped-list-count-item">
+            <span class="striped-list-number">{{vote_sum}}</span>
+            {{t 'vote' count=vote_sum}}
+          </span>
+          <span class="striped-list-count-item">
+            <span class="striped-list-number">{{comment_count}}</span>
+            {{t 'comment' count=comment_count}}
+          </span>
+        </div>
+      </div>
+    </section>
+    {{/each}}
+  </div>
+
+  {{pagination}}
+
+  {{#if featured_posts}}
+  <section class="section community-featured-posts">
+    <h2 class="title">{{t 'featured_posts'}}</h2>
+    <ul class="promoted-articles">
+      {{#each featured_posts}}
+      <li class="promoted-articles-item">
+        <a href="{{url}}">
+          {{title}}
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  <section class="community-activity activity">
+    {{#if help_center.community_enabled}}
+    {{recent_activity scope='community'}}
+    {{/if}}
+  </section>
+
+  <section class="container community-footer">
+    <h2 class="community-footer-title">{{t 'suggest_new_post'}}</h2>
+    {{link 'new_post' class='button button-large'}}
+  </section>
+</div>
