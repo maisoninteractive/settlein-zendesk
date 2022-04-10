@@ -20,6 +20,8 @@
     "brand_group_label": "Merek",
     "logo_description": "Logo perusahaan",
     "logo_label": "Logo",
+    "negative_logo_label": "Negative Logo",
+    "negative_logo_description": "Company Negative Logo",
     "hero_image_label": "Hero Image",
     "favicon_description": "Ikon yang ditampilkan pada batang alamat browser Anda",
     "favicon_label": "Favicon (Ikon favorit)",

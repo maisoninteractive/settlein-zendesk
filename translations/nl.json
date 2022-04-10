@@ -20,6 +20,8 @@
     "brand_group_label": "Merk",
     "logo_description": "Bedrijfslogo",
     "logo_label": "Logo",
+    "negative_logo_label": "Negative Logo",
+    "negative_logo_description": "Company Negative Logo",
     "hero_image_label": "Hero Image",
     "favicon_description": "Pictogram dat wordt weergegeven op de adresbalk van uw browser",
     "favicon_label": "Favicon",

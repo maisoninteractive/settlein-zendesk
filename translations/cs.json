@@ -20,6 +20,8 @@
     "brand_group_label": "Značka",
     "logo_description": "Logo společnosti",
     "logo_label": "Logo",
+    "negative_logo_label": "Negative Logo",
+    "negative_logo_description": "Company Negative Logo",
     "hero_image_label": "Hero Image",
     "favicon_description": "Ikona zobrazená v řádku adresy prohlížeče",
     "favicon_label": "Favikona",

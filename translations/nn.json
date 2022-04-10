@@ -18,6 +18,8 @@
     "brand_group_label": "Merke",
     "logo_description": "Bedriftslogo",
     "logo_label": "Logo",
+    "negative_logo_label": "Negative Logo",
+    "negative_logo_description": "Company Negative Logo",
     "hero_image_label": "Hero Image",
     "favicon_description": "Ikon som vises i adresselinjen i nettleseren",
     "favicon_label": "Favicon",

@@ -20,6 +20,8 @@
     "brand_group_label": "Marka",
     "logo_description": "Şirket logosu",
     "logo_label": "Logo",
+    "negative_logo_label": "Negative Logo",
+    "negative_logo_description": "Company Negative Logo",
     "hero_image_label": "Hero Image",
     "favicon_description": "Tarayıcınızın adres çubuğunda görüntülenen simge",
     "favicon_label": "Site simgesi",

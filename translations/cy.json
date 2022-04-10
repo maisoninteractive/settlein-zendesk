@@ -19,6 +19,8 @@
     "logo_description": "Company logo",
     "hero_image_description": "Hero Banner Image",
     "logo_label": "Logo",
+    "negative_logo_label": "Negative Logo",
+    "negative_logo_description": "Company Negative Logo",
     "hero_image_label": "Hero Image",
     "favicon_description": "Icon displayed in the address bar of your browser",
     "favicon_label": "Favicon",

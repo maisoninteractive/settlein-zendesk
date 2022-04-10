@@ -1,28 +1,98 @@
-<section id="main-content" class="section article-hero hero">
-  	<div class="hero-inner">
-  	</div>
-  <h1>About Us</h1>
-</section>
-<div class="container">
-  <div class="article-container" id="article-container">
-    <article id="main-content" class="about-us">
-      <header class="article-header">
-        <h1 title="{{article.title}}" class="article-title">
-          {{article.title}}
-          {{#if article.internal}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 16 16" class="icon-lock svg-20" title="{{t 'internal'}}">
-              <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
-              <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
-            </svg>
-          {{/if}}
-        </h1>
-      </header>
+<section class="section hero">
+  <header class="header">
+    <div class="logo">
+      {{#link 'help_center'}}
+      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
+      {{#if settings.show_brand_name}}
+      <span aria-hidden="true">{{help_center.name}}</span>
+      {{/if}}
+      {{/link}}
+    </div>
+    <div class="nav-wrapper-desktop">
+      <nav class="user-nav" id="user-nav">
+        <ul class="user-nav-list">
+          <li><a href="https://settleinus.org/about-core/">About CORE</i></a></li>
+          <li><a href="https://settleinus.org/life-in-the-u-s/">Life in the U.S</a></li>
+          <li><a href="https://settleinus.org/about-refugee-resettlement/">About Refugee
+              Resettlement</a></li>
+          <li class="active"><a href="https://settleinus.org/help-center/">Help Center</a></li>
+          <li><a href="https://settleinus.org/multilingual-resource-library/">Multilingual
+              Resource Library</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="language-selector-wrapper" class="header-language-selector">
+      {{#if alternative_locales}}
+      <div class="dropdown language-selector">
+        <button class="dropdown-toggle" aria-haspopup="true">
+          {{current_locale.name}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+            class="dropdown-chevron-icon">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5" />
+          </svg>
+        </button>
+        <span class="dropdown-menu dropdown-menu-end" role="menu">
+          {{#each alternative_locales}}
+          <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+            {{name}}
+          </a>
+          {{/each}}
+        </span>
+      </div>
+      {{/if}}
+    </div>
 
-      <section class="article-info">
-        <div class="article-content">
-          <div class="article-body">{{article.body}}</div>
-        </div>
-      </section>
-    </article>
+    <div class="nav-wrapper-mobile">
+      <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false"
+        aria-label="{{t 'toggle_navigation'}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
+          class="icon-menu">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
+        </svg>
+      </button>
+
+      <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
+        <ul class="menu-list-mobile-items">
+          <li><a href="https://settleinus.org/about-core/">About CORE</i></a></li>
+          <li><a href="https://settleinus.org/life-in-the-u-s/">Life in the U.S</a></li>
+          <li><a href="https://settleinus.org/about-refugee-resettlement/">About Refugee
+              Resettlement</a></li>
+          <li><a href="https://settleinus.org/help-center/">Help Center</a></li>
+          <li><a href="https://settleinus.org/multilingual-resource-library/">Multilingual
+              Resource Library</a></li>
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+  <section id="main-content" class="section article-hero hero">
+    <div class="hero-inner">
+    </div>
+    <h1>About Us</h1>
+  </section>
+  <div class="container">
+    <div class="article-container" id="article-container">
+      <article id="main-content" class="about-us">
+        <header class="article-header">
+          <h1 title="{{article.title}}" class="article-title">
+            {{article.title}}
+            {{#if article.internal}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 16 16"
+              class="icon-lock svg-20" title="{{t 'internal'}}">
+              <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1" />
+              <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5" />
+            </svg>
+            {{/if}}
+          </h1>
+        </header>
+
+        <section class="article-info">
+          <div class="article-content">
+            <div class="article-body">{{article.body}}</div>
+          </div>
+        </section>
+      </article>
+    </div>
   </div>
-</div>

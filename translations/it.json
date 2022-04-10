@@ -20,6 +20,8 @@
     "brand_group_label": "Brand",
     "logo_description": "Logo azienda",
     "logo_label": "Logo",
+    "negative_logo_label": "Negative Logo",
+    "negative_logo_description": "Company Negative Logo",
     "hero_image_label": "Hero Image",
     "favicon_description": "Icona visualizzata nella barra dell’indirizzo del browser",
     "favicon_label": "Favicon",
