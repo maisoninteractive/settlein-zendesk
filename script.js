@@ -604,7 +604,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (language == "sw") {
                 language = "sw-ke";
             }
-            if (language == "fa-AF") {
+            if (language == "fa-af") {
                 language = "fa";
             }
             return language;
