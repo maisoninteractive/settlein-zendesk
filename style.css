@@ -842,6 +842,7 @@ input[type="submit"][disabled] {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 .logo span {
@@ -1636,12 +1637,12 @@ input[type="submit"][disabled] {
 /***** Homepage *****/
 
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
     .section {
-        margin-bottom: 60px;
+        margin-bottom: 20px;
     }
 }
 
@@ -2264,8 +2265,8 @@ input[type="submit"][disabled] {
 
 .sidenav-item.current-article,
 .sidenav-item:hover {
-    background-color: $brand_color;
-    color: $brand_text_color;
+    background-color: $link_background_color;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -5730,7 +5731,8 @@ ul.tabs li.active {
 
 /* Articles Buttons */
 
-.read-story-button {
+.read-story-button,
+#articles-header-image>a {
     font-size: 16px;
     font-weight: 700;
     fill: #FFFFFF;
@@ -5747,7 +5749,8 @@ ul.tabs li.active {
     transition: all .3s;
 }
 
-.read-story-button:hover {
+.read-story-button:hover,
+#articles-header-image>a:hover {
     background-color: #000000;
 }
 
@@ -5788,6 +5791,11 @@ ul.tabs li.active {
 
 .button-icon>i {
     font-size: 14px;
+}
+
+#articles-header-image>a {
+    position: absolute;
+    bottom: 60px;
 }
 
 

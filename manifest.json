@@ -1,7 +1,7 @@
 {
     "name": "SettleIn",
     "author": "Zendesk",
-    "version": "2.14.53",
+    "version": "2.14.54",
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [{
@@ -50,6 +50,13 @@
                     "description": "visited_link_color_description",
                     "label": "visited_link_color_label",
                     "value": "#4B61C3"
+                },
+                {
+                    "identifier": "link_background_color",
+                    "type": "color",
+                    "description": "link_background_color_description",
+                    "label": "link_background_color_label",
+                    "value": "#3b70e3"
                 },
                 {
                     "identifier": "background_color",
