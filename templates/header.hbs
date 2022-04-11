@@ -1,5 +1,16 @@
 <a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
 <section class="section hero">
+    <div id="top-bar">
+        <div class="search-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+                class="search-icon">
+                <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
+                <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
+            </svg>
+            {{search scoped=settings.scoped_kb_search submit=false}}
+        </div>
+    </div>
+
     <header class="header">
         <div class="logo">
             {{#link 'help_center'}}

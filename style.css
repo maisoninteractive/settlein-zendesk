@@ -817,7 +817,32 @@ input[type="submit"][disabled] {
     justify-content: space-between;
 }
 
-@media (min-width: 1160px) {}
+#top-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    min-height: 50px;
+    padding-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    #top-bar {
+        align-items: baseline;
+        flex-direction: row;
+    }
+}
+
+#articles-header-image {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 450px;
+    background-color: #efefef;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .logo span {
     margin: 0 10px;
@@ -1357,6 +1382,12 @@ input[type="submit"][disabled] {
     background-image: url($homepage_background_image);
     background-position: center;
     background-size: cover;
+    padding: 0 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.artciles-hero {
     padding: 0 20px;
     text-align: center;
     width: 100%;
