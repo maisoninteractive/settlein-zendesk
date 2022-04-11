@@ -1,6 +1,6 @@
 </section>
 <section id="articles-header-image" style=""></section>
-{{!-- <div class="container-divider"></div> --}}
+<div id="header-divider" class="container-divider" style="display: none;"></div>
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
@@ -357,11 +357,8 @@
        */
       init: function () {
         var self = this;
-
-
         // popup image
         self.setArticlesHeader();
-
 
       },
       /**
@@ -369,17 +366,32 @@
        */
 
       setArticlesHeader: function () {
+        var self = this;
         $('section.section.hero').addClass('artciles-hero');
         $('section.section.hero').removeClass('hero');
         $('.logo img').attr('src', $('#negative_logo').html());
 
-        $("#articles-header-image").css({
-          'background-image': "url(" + $('div.article-attachments > ul >li >a').attr('href') + ")",
-        });
+        let urlimg = $('div.article-attachments > ul >li >a').attr('href');
+        if (self.checkURL(urlimg) || (typeof urlimg !== 'undefined')) {
+          $("#articles-header-image").css({
+            'background-image': "url(" + urlimg + ")",
+          });
+
+        } else {
+          $("#articles-header-image").hide();
+          $('#header-divider').show();
+        }
+
 
         $(".se-pre-con").fadeOut("slow");
       },
-
+      checkURL: function (url) {
+        var arr = ["jpeg", "jpg", "gif", "png"];
+        var ext = url.substring(url.lastIndexOf(".") + 1);
+        if ($.inArray(ext, arr)) {
+          return true;
+        }
+      },
 
     }
 
