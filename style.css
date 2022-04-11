@@ -5727,6 +5727,12 @@ header .language-container button {
     header .language-container button {
         font-size: 12px;
     }
+    header .max-width-300 {
+        max-width: 140px;
+    }
+    .nav-wrapper-mobile .menu-button-mobile {
+        min-width: 30px;
+    }
 }
 
 .topics-container .topics-icon-col,
