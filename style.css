@@ -5714,6 +5714,21 @@ header .language-container button {
     }
 }
 
+@media screen and (max-width: 400px) {
+    header .language-container {
+        font-size: 12px;
+    }
+    header .language-container .language-icon-col svg {
+        width: 30px;
+    }
+    header .lang_switcher_title {
+        display: none;
+    }
+    header .language-container button {
+        font-size: 12px;
+    }
+}
+
 .topics-container .topics-icon-col,
 .language-container .language-icon-col {
     flex: 3 0 auto;
