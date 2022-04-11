@@ -37,7 +37,7 @@
             </nav>
         </div>
 
-        <div class="max-width-250">
+        <div class="max-width-300">
             <div class="language-container">
                 <div class="language-icon-col text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1"
@@ -132,29 +132,28 @@
                         </path>
                     </svg>
                 </div>
+                <div class="lang_switcher_title">{{dc 'settlein_language_dropdown_label' }}: </div>
                 <div class="language-dropdown">
-                    <div id="filter-language-selector" class="text-center">
-                        <div id="language-selector-wrapper" class="header-language-selector">
-                            {{#if alternative_locales}}
-                            <div class="dropdown language-selector">
-                                <button class="dropdown-toggle" aria-haspopup="true">
-                                    {{current_locale.name}}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false"
-                                        viewBox="0 0 12 12" class="dropdown-chevron-icon">
-                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                            d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"></path>
-                                    </svg>
-                                </button>
-                                <span class="dropdown-menu dropdown-menu-end" role="menu">
-                                    {{#each alternative_locales}}
-                                    <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                                        {{name}}
-                                    </a>
-                                    {{/each}}
-                                </span>
-                            </div>
-                            {{/if}}
+                    <div id="language-selector-wrapper" class="header-language-selector">
+                        {{#if alternative_locales}}
+                        <div class="dropdown language-selector">
+                            <button class="dropdown-toggle" aria-haspopup="true">
+                                {{current_locale.name}}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false"
+                                    viewBox="0 0 12 12" class="dropdown-chevron-icon">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"></path>
+                                </svg>
+                            </button>
+                            <span class="dropdown-menu dropdown-menu-end" role="menu">
+                                {{#each alternative_locales}}
+                                <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                                    {{name}}
+                                </a>
+                                {{/each}}
+                            </span>
                         </div>
+                        {{/if}}
                     </div>
                 </div>
             </div>
