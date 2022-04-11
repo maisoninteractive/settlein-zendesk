@@ -5687,6 +5687,10 @@ ul.tabs li.active {
     justify-content: center;
 }
 
+header .language-container {
+    background-color: #3b70e3;
+}
+
 .topics-container .topics-icon-col,
 .language-container .language-icon-col {
     flex: 3 0 auto;
@@ -5888,10 +5892,12 @@ ul.tabs li.active {
 
 .max-width-300 {
     max-width: 300px;
+    width: 100%;
 }
 
 .max-width-250 {
     max-width: 250px;
+    width: 100%;
 }
 
 .margin-top-20 {
