@@ -5732,7 +5732,7 @@ ul.tabs li.active {
 /* Articles Buttons */
 
 .read-story-button,
-#articles-header-image>a {
+#articles-header-image>.container>a {
     font-size: 16px;
     font-weight: 700;
     fill: #FFFFFF;
@@ -5750,7 +5750,7 @@ ul.tabs li.active {
 }
 
 .read-story-button:hover,
-#articles-header-image>a:hover {
+#articles-header-image>.container>a:hover {
     background-color: #000000;
 }
 
@@ -5793,7 +5793,7 @@ ul.tabs li.active {
     font-size: 14px;
 }
 
-#articles-header-image>a {
+#articles-header-image>.container>a {
     position: absolute;
     bottom: 60px;
 }
