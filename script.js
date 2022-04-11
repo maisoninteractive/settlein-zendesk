@@ -594,10 +594,14 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         checkURL: function(url) {
             var arr = ["jpeg", "jpg", "gif", "png"];
-            var ext = url.substring(url.lastIndexOf(".") + 1);
-            if ($.inArray(ext, arr)) {
-                return true;
+            if (typeof url !== 'undefined') {
+                var ext = url.substring(url.lastIndexOf(".") + 1);
+                if ($.inArray(ext, arr)) {
+                    return true;
+                }
+                return false;
             }
+            return false
         },
         getMenuLanguageCornav: function(lang) {
             let language = (lang.toLowerCase());

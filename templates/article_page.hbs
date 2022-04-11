@@ -372,7 +372,7 @@
         $('.logo img').attr('src', $('#negative_logo').html());
 
         let urlimg = $('div.article-attachments > ul >li >a').attr('href');
-        if (typeof imageUrl.article_attachments[0] !== 'undefined' && self.checkURL(urlimg) && (typeof urlimg !== 'undefined')) {
+        if (self.checkURL(urlimg)) {
           $("#articles-header-image").css({
             'background-image': "url(" + urlimg + ")",
           });
@@ -387,10 +387,14 @@
       },
       checkURL: function (url) {
         var arr = ["jpeg", "jpg", "gif", "png"];
-        var ext = url.substring(url.lastIndexOf(".") + 1);
-        if ($.inArray(ext, arr)) {
-          return true;
+        if (typeof url !== 'undefined') {
+          var ext = url.substring(url.lastIndexOf(".") + 1);
+          if ($.inArray(ext, arr)) {
+            return true;
+          }
+          return false;
         }
+        return false
       },
 
     }
