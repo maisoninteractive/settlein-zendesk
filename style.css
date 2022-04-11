@@ -5690,14 +5690,19 @@ ul.tabs li.active {
 header .language-container {
     background-color: #3b70e3;
     color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
 }
 
-header .language-container svg {
+header .language-container .language-icon-col svg {
     fill: #ffffff;
+    width: 60px;
 }
 
 header .language-container button {
     color: #fff;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .topics-container .topics-icon-col,
