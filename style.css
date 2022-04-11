@@ -5798,6 +5798,16 @@ ul.tabs li.active {
     bottom: 60px;
 }
 
+#articles-header-image::before {
+    background: rgba(0, 0, 0, 0.3);
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
 /**** Placeholders ****/
 
