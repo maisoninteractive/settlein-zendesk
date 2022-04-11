@@ -372,7 +372,7 @@
         $('.logo img').attr('src', $('#negative_logo').html());
 
         let urlimg = $('div.article-attachments > ul >li >a').attr('href');
-        if (self.checkURL(urlimg) || (typeof urlimg !== 'undefined')) {
+        if (typeof imageUrl.article_attachments[0] !== 'undefined' && self.checkURL(urlimg) && (typeof urlimg !== 'undefined')) {
           $("#articles-header-image").css({
             'background-image': "url(" + urlimg + ")",
           });

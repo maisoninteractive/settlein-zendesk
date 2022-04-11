@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 $.when(getImage[element['id']]).done(function(imageUrl) {
                     if (typeof imageUrl.article_attachments[0] !== 'undefined') {
                         let urlimg = imageUrl.article_attachments[0].content_url;
-                        if (self.checkURL(urlimg) || (typeof urlimg !== 'undefined')) {
+                        if (self.checkURL(urlimg) && (typeof urlimg !== 'undefined')) {
                             $('#article-' + element['id']).attr('src', imageUrl.article_attachments[0].content_url);
                         } else {
                             $('#img-wrap-' + element['id']).remove();
