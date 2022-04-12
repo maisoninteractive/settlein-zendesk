@@ -14,7 +14,47 @@
         'settlein_search_text') }}
       </li>
       <li class="blocks-item hero-right">
-        <img src="{{ settings.hero_image }}" class="hero-image" />
+        <div id="banner-image">
+          <img src="{{ settings.hero_image }}" class="hero-image" />
+        </div>
+        <div id="chat-channels" class="hide">
+          <div class="row">
+            <div class="col-xs-3">
+              <img src="{{ settings.zendesk_image }}" class="zendesk-image" />
+            </div>
+            <div class="col-xs-9">
+              <div class="chat-title"><a href="{{chat url}}">{{dc 'settlein_zendesk_chat_title'}}</a></div>
+              <div class="chat-description">
+                {{dc 'settlein_zendesk_chat_description'}}
+              </div>
+              <a href="{{chat url}}" class="read-story-button" role="button">
+                <span class="button-content-wrapper">
+                  <span class="button-text">{{dc 'settlein_zendesk_chat_button_text'}}</span>
+                  <span class="button-icon align-icon-right">
+                    <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3">
+              <img src="{{ settings.facebook_image }}" class="facebook-image" />
+            </div>
+            <div class="col-xs-9">
+              <div class="chat-title"><a href="#">{{dc 'settlein_facebook_chat_title'}}</a></div>
+              <div class="chat-description">
+                {{dc 'settlein_facebook_chat_description'}}
+              </div>
+              <a href="#" class="read-story-button" role="button">
+                <span class="button-content-wrapper">
+                  <span class="button-text">{{dc 'settlein_facebook_chat_button_text'}}</span>
+                  <span class="button-icon align-icon-right">
+                    <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
       </li>
     </ul>
 

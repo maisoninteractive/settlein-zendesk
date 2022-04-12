@@ -1,7 +1,7 @@
 {
     "name": "SettleIn",
     "author": "Zendesk",
-    "version": "2.14.76",
+    "version": "2.14.77",
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [{
@@ -257,6 +257,18 @@
                     "type": "file",
                     "description": "hero_image_description",
                     "label": "hero_image_label"
+                },
+                {
+                    "identifier": "zendesk_image",
+                    "type": "file",
+                    "description": "zendesk_image_description",
+                    "label": "zendesk_image_label"
+                },
+                {
+                    "identifier": "facebook_image",
+                    "type": "file",
+                    "description": "facebook_image_description",
+                    "label": "facebook_image_label"
                 },
                 {
                     "identifier": "community_background_image",
