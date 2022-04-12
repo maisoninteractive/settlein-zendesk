@@ -540,6 +540,10 @@ ul {
     color: #ffffff;
 }
 
+.button.article-vote:hover {
+    background-color: #000000;
+}
+
 .button-large,
 input[type="submit"] {
     cursor: pointer;
@@ -2270,7 +2274,8 @@ footer.footer {
 }
 
 .recent-articles li,
-.related-articles li {
+.related-articles li,
+.articles-on-this-section li {
     margin-bottom: 15px;
 }
 
