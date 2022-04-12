@@ -458,6 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         getArticles: function() {
             var self = this;
+            $(".se-pre-con").show();
             let lang = $('html').attr('lang').toLowerCase();
             let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles?page=1&per_page=4';
             $.ajax({
@@ -466,8 +467,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 dataType: 'json',
                 success: function(data) {
                     self.showArticles(data, lang);
+                    $(".se-pre-con").fadeOut("slow");
                 },
                 error: function(request, error) {
+                    $(".se-pre-con").fadeOut("slow");
                     console.log("Request: " + JSON.stringify(request));
                 }
             });
