@@ -551,4 +551,52 @@
 
 
   });
+
+  (function ($) {
+    "use strict";
+
+
+    function CoreHomePage() {
+      var self = this;
+      self.init();
+    };
+
+    CoreHomePage.prototype = {
+      /**
+       *  Initialize
+       */
+      init: function () {
+        var self = this;
+        // popup image
+        self.socialOrBanner();
+
+      },
+      /**
+       *  Extensions: Load scripts
+       */
+
+      socialOrBanner: function () {
+        var self = this;
+        let lng = $('html').attr('lang');
+        if (lng = "fa-AF" || lng = 'ps') {
+          $('#banner-image').addClass('hide');
+          $('#chat-channels').removeClass('hide');
+        }
+      },
+
+    }
+
+    $.CoreHomePage = CoreHomePage.prototype;
+
+
+
+    $(document).ready(function () {
+      // Initialize script
+      new CoreHomePage();
+
+    });
+
+
+  })(jQuery);
+
 </script>
