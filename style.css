@@ -1513,6 +1513,22 @@ footer.footer {
 }
 
 
+/***** Chat Area *****/
+
+#chat-channels .chat-title,
+#chat-channels .chat-description,
+#chat-channels .chat-button {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+#chat-channels .chat-channel-wrapper {
+    background-color: #f0f0f7;
+    border-radius: 5px 5px 5px 5px;
+    padding: 4px 8px 4px 8px;
+}
+
+
 /***** Blocks *****/
 
 
@@ -1587,7 +1603,7 @@ footer.footer {
 .blocks-item:hover *,
 .blocks-item:focus *,
 .blocks-item:active * {
-    color: $brand_text_color;
+    /* color: $brand_text_color; */
     text-decoration: none;
 }
 
