@@ -18,10 +18,12 @@
           <img src="{{ settings.hero_image }}" class="hero-image" />
         </div>
         <div id="chat-channels" class="hide">
-          <div class="chat-channel-wrapper">
+          <div class="chat-channel-wrapper dendesk">
             <div class="row middle-xs">
               <div class="col-xs-3">
-                <img src="{{ settings.zendesk_image }}" class="zendesk-image" />
+                <div class="chat-image">
+                  <img src="{{ settings.zendesk_image }}" class="zendesk-image" />
+                </div>
               </div>
               <div class="col-xs-9">
                 <div class="chat-title"><a href="#">{{dc 'settlein_zendesk_chat_title'}}</a></div>
@@ -40,23 +42,27 @@
               </div>
             </div>
           </div>
-          <div class="chat-channel-wrapper">
+          <div class="chat-channel-wrapper facebook">
             <div class="row middle-xs">
               <div class="col-xs-3">
-                <img src="{{ settings.facebook_image }}" class="facebook-image" />
+                <div class="chat-image">
+                  <img src="{{ settings.facebook_image }}" class="facebook-image" />
+                </div>
               </div>
               <div class="col-xs-9">
                 <div class="chat-title"><a href="#">{{dc 'settlein_facebook_chat_title'}}</a></div>
                 <div class="chat-description">
                   {{dc 'settlein_facebook_chat_description'}}
                 </div>
-                <a href="#" class="read-story-button" role="button">
-                  <span class="button-content-wrapper">
-                    <span class="button-text">{{dc 'settlein_facebook_chat_button_text'}}</span>
-                    <span class="button-icon align-icon-right">
-                      <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
-                  </span>
-                </a>
+                <div class="chat-button">
+                  <a href="#" class="read-story-button" role="button">
+                    <span class="button-content-wrapper">
+                      <span class="button-text">{{dc 'settlein_facebook_chat_button_text'}}</span>
+                      <span class="button-icon align-icon-right">
+                        <i aria-hidden="true" class="fa fa-arrow-right"></i> </span>
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

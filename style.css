@@ -1524,8 +1524,9 @@ footer.footer {
 
 #chat-channels .chat-channel-wrapper {
     background-color: #f0f0f7;
-    border-radius: 5px 5px 5px 5px;
-    padding: 4px 8px 4px 8px;
+    border-radius: 14px;
+    padding: 12px 8px 12px 8px;
+    margin: 15px auto;
 }
 
 
