@@ -138,7 +138,16 @@
                         {{#if alternative_locales}}
                         <div class="dropdown language-selector">
                             <button class="dropdown-toggle" aria-haspopup="true">
+
+                                {{#is current_locale.name 'Dari (Afghanistan)'}}
+                                دری
+                                {{else}}
+                                {{#is current_locale.name 'Kiswahili'}}
+                                Swahili
+                                {{else}}
                                 {{current_locale.name}}
+                                {{/is}}
+                                {{/is}}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false"
                                     viewBox="0 0 12 12" class="dropdown-chevron-icon">
                                     <path fill="none" stroke="currentColor" stroke-linecap="round"
