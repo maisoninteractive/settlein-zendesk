@@ -1,6 +1,6 @@
 <a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
 <section class="section hero">
-    <div id="top-bar">
+    <div id="top-bar" class="hide">
         <div class="search-container">
             <svg version="1.1" viewBox="0 0 15.041 15.045" class="search-icon" xmlns="http://www.w3.org/2000/svg">
                 <g transform="translate(-113.14 576.52)">
@@ -148,7 +148,12 @@
                             <span class="dropdown-menu dropdown-menu-end" role="menu">
                                 {{#each alternative_locales}}
                                 <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                                    {{#is alternative_locales.name 'Dari (Afghanistan)'}}
+                                    پښتو
+                                    {{else}}
                                     {{name}}
+                                    {{/is}}
+
                                 </a>
                                 {{/each}}
                             </span>
