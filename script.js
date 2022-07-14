@@ -436,10 +436,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             $('#pagination').on("click", 'div[class*="pagination:number"]', function(e) {
                 e.preventDefault();
-                $(".se-pre-con").show();
                 let lang = $('html').attr('lang').toLowerCase();
-                if ($(this).data('query') != "#") {
-                    let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles' + $(this).data('query');
+                let Qdata = $(this).data('query');
+                if (Qdata != "#") {
+                    $(".se-pre-con").show();
+                    let articlesUrl = 'https://www.settlein.support/api/v2/help_center/' + lang + '/articles' + Qdata;
                     $.ajax({
                         url: articlesUrl,
                         type: 'GET',
