@@ -27,24 +27,19 @@
             <nav class="user-nav" id="user-nav">
                 <ul class="user-nav-list">
 
-
                     <li>
                         <a href="{{dc 'settlein_menu_life_in_the_u_s_link'}}">{{dc 'settlein_menu_life_in_the_u_s'}}</a>
                     </li>
                     <li>
-                        <a href="https://settleinus.org/about-refugee-resettlement/">About Refugee
-                            Resettlement</a>
+                        <a href="{{dc 'settlein_menu_u_s_resettlement_process_link'}}">{{dc
+                            'settlein_menu_u_s_resettlement_process'}} </a>
                     </li>
-                    <li class="active">
-                        <a href="https://settleinus.org/help-center/">Help Center</a>
-                    </li>
+                    {{#is current_locale.name 'English (US)'}}
                     <li>
-                        <a href="https://settleinus.org/multilingual-resource-library/">Multilingual
-                            Resource Library</a>
+                        <a href="{{dc 'settlein_menu_multilingual_resource_library_link'}}"> {{ dc
+                            'settlein_menu_multilingual_resource_library' }} </a>
                     </li>
-
-
-
+                    {{/is}}
                 </ul>
             </nav>
         </div>
