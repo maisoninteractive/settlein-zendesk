@@ -5337,7 +5337,7 @@ html[dir="rtl"] .notification-left-aligned {
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    padding: 5px 5px 8px 5px;
+    padding: 5px 5px 8px 12px;
     white-space: nowrap;
     background-color: #3B70E3;
     -webkit-appearance: none;
@@ -5394,7 +5394,7 @@ html[dir="rtl"] .notification-left-aligned {
 }
 
 [dir="rtl"] .dropdown-menu [role="menuitem"] {
-    padding: 5px 5px 8px 5px;
+    padding: 5px 12px 8px 25px;
 }
 
 .dropdown-menu [role="menuitem"]:hover,
