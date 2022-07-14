@@ -5337,12 +5337,12 @@ html[dir="rtl"] .notification-left-aligned {
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    padding: 7px 40px 7px 20px;
+    padding: 5px 5px 8px 5px;
     white-space: nowrap;
     background-color: #3B70E3;
     -webkit-appearance: none;
     /* text-align: start; */
-    line-height: inherit;
+    line-height: 1.1em;
     width: 100%;
     margin: 5px 0px 5px 0px;
     border-style: solid;
@@ -5350,6 +5350,10 @@ html[dir="rtl"] .notification-left-aligned {
     border-color: #FFFFFF;
     font-size: 16px;
     font-weight: 600;
+}
+
+.dropdown-menu.dropdown-menu-end a:last-child {
+    border: none !important;
 }
 
 .dropdown-menu.dropdown-menu-end {
@@ -5390,7 +5394,7 @@ html[dir="rtl"] .notification-left-aligned {
 }
 
 [dir="rtl"] .dropdown-menu [role="menuitem"] {
-    padding: 7px 20px 7px 40px;
+    padding: 5px 5px 8px 5px;
 }
 
 .dropdown-menu [role="menuitem"]:hover,
