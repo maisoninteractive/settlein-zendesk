@@ -415,8 +415,8 @@ document.addEventListener('DOMContentLoaded', function() {
             var self = this;
 
 
-            // popup image
-            self.getMenu();
+            // Get Menu
+            // self.getMenu();
 
             //Append Articles
             if (0 < $('#articles').length) {
