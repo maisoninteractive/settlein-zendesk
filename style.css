@@ -1294,11 +1294,13 @@ footer.footer {
 }
 
 .footer .irc-logo {
-    max-width: 80px;
+    max-width: 60px;
 }
 
-.footer .us-flag {
-    min-width: 220px;
+.footer img.us-flag {
+    /* min-width: 220px; */
+    width: auto;
+    max-width: 100%;
 }
 
 
