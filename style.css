@@ -6035,7 +6035,7 @@ header .language-container button {
     padding-bottom: 30px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .margin-top--15 {
         margin-top: -15px;
     }
