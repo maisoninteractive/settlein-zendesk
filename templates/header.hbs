@@ -15,12 +15,12 @@
 
     <header class="header">
         <div class="logo">
-            {{#link 'help_center'}}
-            <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
-            {{#if settings.show_brand_name}}
-            <span aria-hidden="true">{{help_center.name}}</span>
-            {{/if}}
-            {{/link}}
+            <a href="https://settleinus.org">
+                <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
+                {{#if settings.show_brand_name}}
+                <span aria-hidden="true">{{help_center.name}}</span>
+                {{/if}}
+            </a>
             <div class="hide hidden" id="negative_logo">{{settings.negative_logo}}</div>
         </div>
         <div class="nav-wrapper-desktop">
